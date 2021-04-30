@@ -1,5 +1,7 @@
 package com.stackroute.UserService.service;
 
+import com.stackroute.UserService.exception.CustomerAlreadyExistsException;
+import com.stackroute.UserService.exception.CustomerUnknownException;
 import com.stackroute.UserService.model.User;
 import com.stackroute.UserService.model.UserDto;
 import com.stackroute.UserService.repository.UserRepository;
@@ -28,7 +30,10 @@ public class JwtUserDetailsService implements UserDetailsService {
             }
             return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),new ArrayList<>());
     }
-    public User saveUser(UserDto userDto){
+    public User saveUser(UserDto userDto) throws CustomerAlreadyExistsException {
+            if(repository.existsByusername(userDto.getUsername())){
+                throw new CustomerAlreadyExistsException();
+            }
             User user=new User();
             user.setAddress(userDto.getAddress());
             user.setUsername(userDto.getUsername());
@@ -47,12 +52,13 @@ public class JwtUserDetailsService implements UserDetailsService {
         }
         return user;
     }
-    public User getUserById(int id){
+    public User getUserById(int id) throws CustomerUnknownException {
         User user=null;
         Optional optional=repository.findById(id);
-        if(optional.isPresent()){
-            user=repository.findById(id).get();
+        if(!optional.isPresent()){
+           throw new CustomerUnknownException();
         }
+        user=repository.findById(id).get();
         return user;
     }
     public User updateUser(UserDto userDto){

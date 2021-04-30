@@ -1,5 +1,6 @@
 package com.stackroute.UserService.controller;
 
+import com.stackroute.UserService.exception.CustomerUnknownException;
 import com.stackroute.UserService.model.User;
 import com.stackroute.UserService.model.UserDto;
 import com.stackroute.UserService.service.JwtUserDetailsService;
@@ -25,7 +26,7 @@ public class UserController {
         return new ResponseEntity<>(service.deleteUser(id),HttpStatus.OK);
     }
     @GetMapping("user/{id}")
-    public ResponseEntity<User> displayUserDetails(@PathVariable int id){
+    public ResponseEntity<User> displayUserDetails(@PathVariable int id) throws CustomerUnknownException {
         return new ResponseEntity<>(service.getUserById(id),HttpStatus.OK);
     }
 }

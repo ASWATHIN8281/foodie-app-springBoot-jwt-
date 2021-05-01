@@ -9,6 +9,8 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.Size;
+
 
 @Document(collection = "Favourite-List")
 @AllArgsConstructor
@@ -18,8 +20,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Favourite {
     @Id
     private int id;
+    @Size(max = 40)
     private  String restaurantName;
+    @Size(max = 40)
     private String category;
+    @Size(max = 30)
     private String foodItem;
     private double price;
 

@@ -1,6 +1,9 @@
 package com.stackroute.FavouriteService.controller;
 
+import com.stackroute.FavouriteService.Exception.FoodItemAlreadyExistsException;
+import com.stackroute.FavouriteService.Exception.FoodItemNotFoundException;
 import com.stackroute.FavouriteService.model.Favourite;
+import com.stackroute.FavouriteService.model.FavouriteDto;
 import com.stackroute.FavouriteService.service.Dao;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +22,8 @@ public class FavouriteController {
     private Dao dao;
 
     @PostMapping("/favourite")
-    public ResponseEntity<Favourite> addFavourite(@RequestBody Favourite favourite){
-        return new ResponseEntity<Favourite>(dao.addFavourite(favourite), HttpStatus.CREATED);
+    public ResponseEntity<Favourite> addFavourite(@RequestBody FavouriteDto favouriteDto) throws FoodItemAlreadyExistsException {
+        return new ResponseEntity<Favourite>(dao.addFavourite(favouriteDto), HttpStatus.CREATED);
 
     }
     @GetMapping("/favourites")
@@ -30,8 +33,8 @@ public class FavouriteController {
 
 
     @DeleteMapping("/favourite/{foodItem}")
-    public void deleteFavourite(@PathVariable String foodItem){
-        dao.deleteFavourite(foodItem);
+    public ResponseEntity<Favourite> deleteFavourite(@PathVariable String foodItem) throws FoodItemNotFoundException {
+       return new ResponseEntity<Favourite>(dao.deleteFavourite(foodItem),HttpStatus.OK);
 }
 
 }

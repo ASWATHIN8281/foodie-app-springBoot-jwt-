@@ -1,6 +1,7 @@
 package com.stackroute.FavouriteService.controller;
 
 import com.stackroute.FavouriteService.Exception.FoodItemAlreadyExistsException;
+import com.stackroute.FavouriteService.Exception.FoodItemNotFoundException;
 import com.stackroute.FavouriteService.model.Favourite;
 import com.stackroute.FavouriteService.model.FavouriteDto;
 import com.stackroute.FavouriteService.service.Dao;
@@ -32,7 +33,7 @@ public class FavouriteController {
 
 
     @DeleteMapping("/favourite/{foodItem}")
-    public ResponseEntity<Favourite> deleteFavourite(@PathVariable String foodItem){
+    public ResponseEntity<Favourite> deleteFavourite(@PathVariable String foodItem) throws FoodItemNotFoundException {
        return new ResponseEntity<Favourite>(dao.deleteFavourite(foodItem),HttpStatus.OK);
 }
 

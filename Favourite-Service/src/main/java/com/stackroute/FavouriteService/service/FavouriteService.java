@@ -1,6 +1,7 @@
 package com.stackroute.FavouriteService.service;
 
 import com.stackroute.FavouriteService.Exception.FoodItemAlreadyExistsException;
+import com.stackroute.FavouriteService.Exception.FoodItemNotFoundException;
 import com.stackroute.FavouriteService.model.Favourite;
 import com.stackroute.FavouriteService.model.FavouriteDto;
 import com.stackroute.FavouriteService.repository.FavouriteRepository;
@@ -35,13 +36,17 @@ public class FavouriteService implements Dao {
     }
 
     @Override
-    public Favourite deleteFavourite(String foodItem) {
+    public Favourite deleteFavourite(String foodItem)throws FoodItemNotFoundException {
+
         Favourite favourite=null;
         Optional optional=Optional.of(repository.findByFoodItem(foodItem));
-        if (optional.isPresent()){
+        if (!optional.isPresent()){
+            throw new FoodItemNotFoundException();
+        }
+
             favourite=repository.findByFoodItem(foodItem);
             repository.deleteByfoodItem(foodItem);
-        }
+
        return favourite;
     }
 

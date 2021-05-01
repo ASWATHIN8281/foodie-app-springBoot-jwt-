@@ -21,7 +21,7 @@ public class FavouriteService implements Dao {
 
     @Override
     public void deleteFavourite(String foodItem) {
-        repository.deleteById(foodItem);
+        repository.deleteByfoodItem(foodItem);
     }
 
     @Override

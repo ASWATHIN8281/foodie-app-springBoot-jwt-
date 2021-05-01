@@ -21,7 +21,7 @@
 		<module>Favourite-Service</module>
 		<module>Eureka-Server</module>
 		<module>Gateway-Service</module>
-		<module>User-Service</module>
+		<module>Customer-Service</module>
 		<module>Restaurant-Service</module>
 	</modules>
 	<dependencies>

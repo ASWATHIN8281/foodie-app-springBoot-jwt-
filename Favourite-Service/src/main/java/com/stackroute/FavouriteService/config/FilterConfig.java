@@ -1,6 +1,5 @@
 package com.stackroute.FavouriteService.config;
 
-import com.stackroute.UserService.config.JwtRequestFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

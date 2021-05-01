@@ -29,7 +29,7 @@ public class FavouriteController {
     }
 
 
-@DeleteMapping("/favourite/{foodItem}")
+    @DeleteMapping("/favourite/{foodItem}")
     public void deleteFavourite(@PathVariable String foodItem){
         dao.deleteFavourite(foodItem);
 }

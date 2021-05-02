@@ -25,4 +25,12 @@ public class GlobalException {
         return new ResponseEntity<String>(message2, HttpStatus.CONFLICT);
 
     }
+
+    @Value(value = "${data.exception.message3}")
+    private String message3;
+    @ExceptionHandler(value = UnAuthorizedAccesException.class)
+    public ResponseEntity<String> unAuthorizedAccess(UnAuthorizedAccesException e) {
+        return new ResponseEntity<String>(message3, HttpStatus.UNAUTHORIZED);
+
+    }
 }

@@ -1,8 +1,10 @@
 package com.stackroute.FavouriteService.config;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.stackroute.FavouriteService.Exception.UnAuthorizedAccesException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import lombok.SneakyThrows;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
 
@@ -16,6 +18,7 @@ import java.io.IOException;
 @Component
 public class JwtRequestFilter extends GenericFilterBean {
 
+    @SneakyThrows
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
                          FilterChain filterChain) throws IOException, ServletException {
@@ -32,7 +35,8 @@ public class JwtRequestFilter extends GenericFilterBean {
              * Check if authHeader is null or does not start with "Bearer " then throw Exception
              */
             if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-                throw new ServletException("An exception occured -Missing or Invalid Authorization header");
+                //throw new ServletException("An exception occured -Missing or Invalid Authorization header");
+                 throw new UnAuthorizedAccesException();
             }
             /*
              * Extract token from authHeader

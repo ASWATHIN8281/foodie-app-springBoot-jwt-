@@ -1,6 +1,7 @@
 package com.stackroute.FavouriteService.model;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import lombok.Setter;

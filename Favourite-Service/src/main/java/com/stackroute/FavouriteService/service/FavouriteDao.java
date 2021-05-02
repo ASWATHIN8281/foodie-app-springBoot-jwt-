@@ -7,8 +7,8 @@ import com.stackroute.FavouriteService.model.FavouriteDto;
 
 import java.util.List;
 
-public interface Dao {
-   public Favourite addFavourite(FavouriteDto favouriteDto) throws FoodItemAlreadyExistsException;
+public interface FavouriteDao {
+   public Favourite addFavourite(Favourite favourite) throws FoodItemAlreadyExistsException;
    public Favourite deleteFavourite(String foodItem)throws FoodItemNotFoundException;
 
    List<Favourite> getAll();

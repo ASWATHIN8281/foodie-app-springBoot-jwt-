@@ -26,4 +26,12 @@ public class GlobalException extends ResponseEntityExceptionHandler {
         return new ResponseEntity<String>(message2, HttpStatus.OK);
 
     }
+
+    @Value(value = "${data.exception.message3}")
+    private String message3;
+    @ExceptionHandler(value = UnAuthorizedAccesException.class)
+    public ResponseEntity<String> unAuthorizedAccess(UnAuthorizedAccesException e) {
+        return new ResponseEntity<String>(message3, HttpStatus.UNAUTHORIZED);
+
+    }
 }

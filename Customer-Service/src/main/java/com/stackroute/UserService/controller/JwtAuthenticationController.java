@@ -3,6 +3,7 @@ package com.stackroute.UserService.controller;
 import com.stackroute.UserService.config.JwtTokenUtil;
 import com.stackroute.UserService.model.JwtRequest;
 import com.stackroute.UserService.model.JwtResponse;
+import com.stackroute.UserService.model.User;
 import com.stackroute.UserService.model.UserDto;
 import com.stackroute.UserService.service.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,7 @@ public class JwtAuthenticationController {
         return ResponseEntity.ok(new JwtResponse(token));
     }
     @PostMapping("/register")
-    public ResponseEntity<?> saveUser(@RequestBody UserDto user) throws Exception{
+    public ResponseEntity<?> saveUser(@RequestBody User user) throws Exception{
         return ResponseEntity.ok(userDetailsService.saveUser(user));
     }
     private void authenticate(String username, String password) throws Exception {

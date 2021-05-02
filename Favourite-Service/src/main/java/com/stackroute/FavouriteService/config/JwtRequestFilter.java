@@ -30,7 +30,8 @@ public class JwtRequestFilter extends GenericFilterBean {
         if ("OPTIONS".equals(request.getMethod())) {
             response.setStatus(HttpServletResponse.SC_OK);
             filterChain.doFilter(request, response);
-        } else {
+        }
+        else {
             /*
              * Check if authHeader is null or does not start with "Bearer " then throw Exception
              */
@@ -52,7 +53,8 @@ public class JwtRequestFilter extends GenericFilterBean {
                  */
                 request.setAttribute("claims", claims);
                 filterChain.doFilter(request, response);
-            }catch(JsonParseException j) {
+            }
+            catch(JsonParseException j) {
                 System.out.println(j.getMessage());
             }
         }

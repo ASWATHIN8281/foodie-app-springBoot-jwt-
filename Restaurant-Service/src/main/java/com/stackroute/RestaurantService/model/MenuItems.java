@@ -8,15 +8,16 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.Size;
+import java.util.List;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Document(collection = "MenuDB")
 public class MenuItems {
     @Id
-    private int id;
+    private int menuId;
     @Size(max=30)
     private String category;
     @Size(max=40)
@@ -24,4 +25,5 @@ public class MenuItems {
     @Size(max=100)
     private String description;
     private double price;
+    //List<MenuItems>menuItemsList;
 }

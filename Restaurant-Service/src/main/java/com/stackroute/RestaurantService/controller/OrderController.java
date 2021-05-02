@@ -19,7 +19,7 @@ public class OrderController {
 
     @PostMapping("order")
     public ResponseEntity<Order> saveOrder(@RequestBody Order order) throws OrderAlreadyPlacedByCustomerException {
-        return new ResponseEntity<Order>(service.addNewOrder(order), HttpStatus.CREATED);
+        return new ResponseEntity<Order>(service.addOrder(order), HttpStatus.CREATED);
     }
 
     @GetMapping("orders")
@@ -28,7 +28,7 @@ public class OrderController {
     }
 
     @GetMapping("order/{id}")
-    public Order getOrderById(@PathVariable int id) throws OrderNotFoundException {
-        return service.findByOrderId(id);
+    public ResponseEntity<Order>getOrderById(@PathVariable int id) throws OrderNotFoundException {
+        return new ResponseEntity<Order>(service.findByOrderId(id),HttpStatus.FOUND);
     }
 }

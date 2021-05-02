@@ -7,7 +7,8 @@ import com.stackroute.RestaurantService.model.Order;
 import java.util.List;
 
 public interface OrderDAO {
-    Order addNewOrder(Order order)throws OrderAlreadyPlacedByCustomerException;
+    Order addOrder(Order order)throws OrderAlreadyPlacedByCustomerException;
     List<Order> getAllOrders();
     Order findByOrderId(int id)throws OrderNotFoundException;
+
 }

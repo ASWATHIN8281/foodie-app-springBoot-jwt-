@@ -42,6 +42,13 @@ public class GlobalExceptionHandler {
     {
         return new ResponseEntity<String>(message5, HttpStatus.NOT_FOUND);
     }
+    @Value(value = "${data.exception.message6}")
+    private String message6;
+    @ExceptionHandler(value = OrderAlreadyPlacedByCustomerException.class)
+    public ResponseEntity<String> orderAlreadyPlaced(OrderAlreadyPlacedByCustomerException exception)
+    {
+        return new ResponseEntity<String>(message6, HttpStatus.ALREADY_REPORTED);
+    }
 
 
 }

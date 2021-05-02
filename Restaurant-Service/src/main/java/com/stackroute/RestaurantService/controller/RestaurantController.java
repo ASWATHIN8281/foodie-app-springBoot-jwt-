@@ -1,6 +1,7 @@
 package com.stackroute.RestaurantService.controller;
 import com.stackroute.RestaurantService.exception.RestaurantAlreadyExistsException;
 import com.stackroute.RestaurantService.exception.RestaurantNotFoundException;
+import com.stackroute.RestaurantService.model.Order;
 import com.stackroute.RestaurantService.model.Restaurant;
 import com.stackroute.RestaurantService.service.RestaurantDAO;
 import lombok.AllArgsConstructor;
@@ -21,8 +22,8 @@ public class RestaurantController {
         return new ResponseEntity<Restaurant>(service.addRestaurant(restaurant), HttpStatus.CREATED);
     }
     @GetMapping("restaurants")
-    public List<Restaurant>getAllRestaurants(){
-        return service.getAllRestaurants();
+    public ResponseEntity<List<Restaurant>> getAllOrders() {
+        return new ResponseEntity<List<Restaurant>>((List<Restaurant>) service.getAllRestaurants(), HttpStatus.OK);
     }
     @DeleteMapping("restaurant/{id}")
     public ResponseEntity<Restaurant>getRestaurantAfterDeleting(@PathVariable("id")int id)throws RestaurantNotFoundException {
@@ -34,14 +35,13 @@ public class RestaurantController {
         return new ResponseEntity<Restaurant>(service.updateRestaurant(restaurant),HttpStatus.OK);
     }
 
-    @GetMapping("restaurant/{id}")
-    public ResponseEntity<Restaurant>getRestaurantById(@PathVariable int id)throws RestaurantNotFoundException{
-        return new ResponseEntity<Restaurant>(service.findByRestaurantId(id),HttpStatus.FOUND);
-    }
-
-    @GetMapping("restaurants/{location}")
+    @GetMapping("restaurant/loc/{location}")
     public ResponseEntity<Restaurant> getRestaurantByLocation(@PathVariable String location)throws  RestaurantNotFoundException{
-        return new ResponseEntity<Restaurant>(service.findByRestaurantLocation(location),HttpStatus.FOUND);
+        return new ResponseEntity<Restaurant>(service.findByLocation(location),HttpStatus.FOUND);
+    }
+    @GetMapping("restaurant/name/{name}")
+    public ResponseEntity<Restaurant> getRestaurantByName(@PathVariable String name)throws  RestaurantNotFoundException{
+        return new ResponseEntity<Restaurant>(service.findByName(name),HttpStatus.FOUND);
     }
 
 

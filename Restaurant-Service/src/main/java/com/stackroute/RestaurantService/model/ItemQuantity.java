@@ -7,16 +7,15 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 import javax.validation.constraints.Size;
-
 @NoArgsConstructor
-@AllArgsConstructor
-@Getter
 @Setter
+@Getter
+@AllArgsConstructor
 public class ItemQuantity {
     @Id
-    private int id;
+    private int itemId;
     @Size(max=30)
-    private String name;
+    private String itemName;
     private double price;
     private  int quantity;
 }

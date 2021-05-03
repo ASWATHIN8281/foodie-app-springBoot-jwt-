@@ -9,6 +9,6 @@ public interface MenuItemsRepository extends MongoRepository<MenuItems, Integer>
 
     MenuItems findByName(String menuName);
     @Query(value = "{'name':$0}",delete = true)
-    MenuItems deleteMenuItem(String menuItem);
+    MenuItems deleteByname(String name);
     boolean existsByName(String name);
 }

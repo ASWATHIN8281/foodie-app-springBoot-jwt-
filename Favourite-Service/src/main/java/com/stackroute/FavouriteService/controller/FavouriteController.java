@@ -61,7 +61,7 @@ public class FavouriteController {
 
 
             logger.info("The favourite foodItem is deleted successfully.");
-            return new ResponseEntity<Favourite>(favouriteDao.deleteFavourite(foodItem), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Favourite>(favouriteDao.deleteFavourite(foodItem), HttpStatus.OK);
 
 
     }

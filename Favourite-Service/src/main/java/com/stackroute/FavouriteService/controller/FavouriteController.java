@@ -50,7 +50,10 @@ public class FavouriteController {
 
         return new ResponseEntity<>( favouriteDao.getAll(), HttpStatus.OK);
     }
-
+    @GetMapping("/favourite/{username}")
+    public ResponseEntity<List<Favourite>>getFavouriteByUsername(@PathVariable String username){
+        return new ResponseEntity<>(( favouriteDao.getFavouriteByUsername(username)),HttpStatus.FOUND);
+    }
 
     @DeleteMapping("/favourite/{foodItem}")
     public ResponseEntity<Favourite> deleteFavourite( @PathVariable String foodItem)
@@ -62,4 +65,5 @@ public class FavouriteController {
 
 
     }
+
 }

@@ -34,6 +34,8 @@ public class Favourite {
     private String foodItem;
     @NotNull
     private double price;
+    @NotNull
+    private String username;
 
 
 

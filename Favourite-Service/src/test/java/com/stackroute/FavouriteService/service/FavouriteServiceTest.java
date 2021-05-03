@@ -40,8 +40,8 @@ class FavouriteServiceTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        favourite = new Favourite(1, "Tito's Cafe", "Junk", "Burger", 160);
-        favourite1 = new Favourite(2, "Bamboo Restaurant", "Biryani", "Bamboo Chicken Biryani", 250);
+        favourite = new Favourite(1, "Tito's Cafe", "Junk", "Burger", 160,"Jenis");
+        favourite1 = new Favourite(2, "Bamboo Restaurant", "Biryani", "Bamboo Chicken Biryani", 250,"Alby");
         optional = Optional.of(favourite);
     }
 

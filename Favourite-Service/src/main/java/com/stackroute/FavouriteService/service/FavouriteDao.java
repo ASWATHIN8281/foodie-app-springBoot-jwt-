@@ -10,6 +10,7 @@ import java.util.List;
 public interface FavouriteDao {
    public Favourite addFavourite(Favourite favourite) throws FoodItemAlreadyExistsException;
    public Favourite deleteFavourite(String foodItem)throws FoodItemNotFoundException;
+   List<Favourite>  getFavouriteByUsername(String username);
 
    List<Favourite> getAll();
 

@@ -13,4 +13,5 @@ public class UserDto {
     private String contactNum;
     private String address;
     private String password;
+
 }

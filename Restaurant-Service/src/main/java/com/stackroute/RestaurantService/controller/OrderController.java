@@ -12,22 +12,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @AllArgsConstructor
 @RestController
-@RequestMapping("api/v1")
+@RequestMapping("/api/v1")
 public class OrderController {
     @Autowired
     private OrderDAO service;
 
-    @PostMapping("order")
+    @PostMapping("/order")
     public ResponseEntity<Order> saveOrder(@RequestBody Order order) throws OrderAlreadyPlacedByCustomerException {
         return new ResponseEntity<Order>(service.addOrder(order), HttpStatus.CREATED);
     }
 
-    @GetMapping("orders")
+    @GetMapping("/orders")
     public ResponseEntity<List<Order>> getAllOrders() {
         return new ResponseEntity<List<Order>>((List<Order>) service.getAllOrders(), HttpStatus.OK);
     }
 
-    @GetMapping("order/{id}")
+    @GetMapping("/order/{id}")
     public ResponseEntity<Order>getOrderById(@PathVariable int id) throws OrderNotFoundException {
         return new ResponseEntity<Order>(service.findByOrderId(id),HttpStatus.FOUND);
     }

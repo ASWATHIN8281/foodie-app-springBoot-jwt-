@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-@Document(collection = "RestaurantDB")
+@Document(collection = "Restaurant")
 public class Restaurant {
     @Id
     private int restaurantId;

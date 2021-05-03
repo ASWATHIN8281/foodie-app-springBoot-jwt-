@@ -1,12 +1,8 @@
-package com.stackroute.FavouriteService.config;
+package com.stackroute.RestaurantService.config;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import com.stackroute.FavouriteService.Exception.UnAuthorizedAccesException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import lombok.SneakyThrows;
-import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.filter.GenericFilterBean;
 
 import javax.servlet.FilterChain;
@@ -16,11 +12,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-@Component
-@RestController
-public class JwtRequestFilter extends GenericFilterBean {
 
-    @SneakyThrows
+public class JwtRequestFilter extends GenericFilterBean {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
                          FilterChain filterChain) throws IOException, ServletException {
@@ -38,8 +31,8 @@ public class JwtRequestFilter extends GenericFilterBean {
              * Check if authHeader is null or does not start with "Bearer " then throw Exception
              */
             if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-                //throw new ServletException("An exception occured -Missing or Invalid Authorization header");
-                 throw new UnAuthorizedAccesException();
+                throw new ServletException("An exception occured -Missing or Invalid Authorization header");
+
             }
             /*
              * Extract token from authHeader

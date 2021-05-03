@@ -1,0 +1,35 @@
+2021-05-03 04:23:18.329  INFO 7343 --- [restartedMain] c.s.UserService.UserServiceApplication   : Starting UserServiceApplication on ip-172-31-46-249 with PID 7343 (/home/ubuntu/Desktop/Foodie-App/Customer-Service/target/classes started by ubuntu in /home/ubuntu/Desktop/Foodie-App)
+2021-05-03 04:23:18.356  INFO 7343 --- [restartedMain] c.s.UserService.UserServiceApplication   : No active profile set, falling back to default profiles: default
+2021-05-03 04:23:18.798  INFO 7343 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-03 04:23:18.799  INFO 7343 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-03 04:23:24.305  INFO 7343 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-03 04:23:24.476  INFO 7343 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 139ms. Found 1 JPA repository interfaces.
+2021-05-03 04:23:25.505  INFO 7343 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@fe104d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 04:23:25.528  INFO 7343 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 04:23:27.371  INFO 7343 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-03 04:23:27.386  INFO 7343 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-03 04:23:27.386  INFO 7343 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 04:23:27.536  INFO 7343 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-03 04:23:27.537  INFO 7343 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8737 ms
+2021-05-03 04:23:28.122  INFO 7343 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-03 04:23:28.657  INFO 7343 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-05-03 04:23:29.538  INFO 7343 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-03 04:23:30.077  INFO 7343 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-03 04:23:31.146  INFO 7343 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-03 04:23:31.405  INFO 7343 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-03 04:23:33.389  INFO 7343 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-03 04:23:33.398  INFO 7343 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-03 04:23:34.076  WARN 7343 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-03 04:23:34.513  INFO 7343 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-03 04:23:35.779  INFO 7343 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@237553af, org.springframework.security.web.context.SecurityContextPersistenceFilter@5ce4d86b, org.springframework.security.web.header.HeaderWriterFilter@459a6460, org.springframework.security.web.authentication.logout.LogoutFilter@6ffe9e71, com.stackroute.UserService.config.JwtRequestFilter@d65d86b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@13b1a158, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a50a64e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@233589c4, org.springframework.security.web.session.SessionManagementFilter@3d1fb42f, org.springframework.security.web.access.ExceptionTranslationFilter@6a40740a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@57b48955]
+2021-05-03 04:23:36.066  INFO 7343 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 04:23:36.700  INFO 7343 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-05-03 04:23:36.726  INFO 7343 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-05-03 04:23:36.783  INFO 7343 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-05-03 04:23:36.798  INFO 7343 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-05-03 04:23:37.176  INFO 7343 --- [restartedMain] c.s.UserService.UserServiceApplication   : Started UserServiceApplication in 20.526 seconds (JVM running for 23.331)
+2021-05-03 04:25:27.242  INFO 7343 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 04:25:27.243  INFO 7343 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-03 04:25:27.265  INFO 7343 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
+2021-05-03 04:25:27.303  WARN 7343 --- [http-nio-8081-exec-2] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-03 05:06:38.724  WARN 7343 --- [http-nio-8081-exec-7] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String

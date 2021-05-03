@@ -43,6 +43,6 @@ public class RestaurantController {
     public ResponseEntity<Restaurant> getRestaurantByName(@PathVariable String name)throws  RestaurantNotFoundException{
         return new ResponseEntity<Restaurant>(service.findByName(name),HttpStatus.FOUND);
     }
-
+//fetch restaurant by menuItems
 
 }

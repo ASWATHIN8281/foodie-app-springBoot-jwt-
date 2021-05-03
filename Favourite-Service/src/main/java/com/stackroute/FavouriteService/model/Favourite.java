@@ -36,7 +36,7 @@ public class Favourite {
     private double price;
     @NotNull
     private String username;
-
+  //add user rate
 
 
 }

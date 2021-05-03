@@ -37,7 +37,7 @@ class FavouriteRepositoryTest {
         Favourite favourite1=new Favourite(3,"Navaratna","Thali's","Veg Thali",150,"Alby");
         repository.save(favourite1);
         List<Favourite>favouriteList=repository.findAll();
-        assertEquals("BarbequeIn",favouriteList.get(6).getRestaurantName());
+        assertEquals("BarbequeIn",favouriteList.get(0).getRestaurantName());
     }
     @Test
     public void givenFoodItemThenShouldReturnRespectiveFavourite(){

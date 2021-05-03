@@ -20,5 +20,6 @@ public class FavouriteDto {
 
     private String foodItem;
     private double price;
+    private String username;
 
 }

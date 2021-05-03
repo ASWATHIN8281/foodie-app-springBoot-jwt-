@@ -13,5 +13,6 @@ public interface FavouriteRepository extends MongoRepository<Favourite,Integer>{
     Favourite deleteByfoodItem(String foodItem);
     Favourite findByFoodItem(String foodItem);
     Boolean existsByFoodItem(String foodItem);
+    Boolean existsByUserName(String username);
     List<Favourite> findByUsername(String username);
 }

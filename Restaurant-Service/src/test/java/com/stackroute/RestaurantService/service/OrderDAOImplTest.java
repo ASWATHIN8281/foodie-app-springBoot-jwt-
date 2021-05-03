@@ -2,10 +2,7 @@ package com.stackroute.RestaurantService.service;
 
 import com.stackroute.RestaurantService.exception.OrderAlreadyPlacedByCustomerException;
 import com.stackroute.RestaurantService.exception.OrderNotFoundException;
-import com.stackroute.RestaurantService.model.ItemQuantity;
-import com.stackroute.RestaurantService.model.Order;
-import com.stackroute.RestaurantService.model.Restaurant;
-import com.stackroute.RestaurantService.model.UserInfo;
+import com.stackroute.RestaurantService.model.*;
 import com.stackroute.RestaurantService.repository.OrderRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -37,6 +34,7 @@ class OrderDAOImplTest {
     private UserInfo userInfo;
     private Restaurant restaurant;
     private ItemQuantity itemQuantity;
+    private MenuItems menuItems;
 
     @AfterEach
     void tearDown() {
@@ -47,10 +45,13 @@ class OrderDAOImplTest {
     void setUp() {
         MockitoAnnotations.initMocks(this);
         userInfo=new UserInfo(1,"Jenis","Jose",95,"Kan");
-        restaurant=new Restaurant(1,"Clarks cafe","janimpur");
+
         itemQuantity=new ItemQuantity(1,"Biryani",160,1);
         List<ItemQuantity> itemQuantityList=new ArrayList<>(Arrays.asList(itemQuantity));
 
+        menuItems=new MenuItems(1,"Veg","GobiManchurian","vege",120);
+        List<MenuItems> menuItemsList=new ArrayList<>(Arrays.asList(menuItems));
+        restaurant=new Restaurant(1,"Clarks cafe","janimpur",menuItemsList);
         order=new Order(1,160,30,20,userInfo,restaurant,itemQuantityList);
 
         optional=Optional.of(order);

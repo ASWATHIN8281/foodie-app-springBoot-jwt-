@@ -25,5 +25,5 @@ public class MenuItems {
     @Size(max=100)
     private String description;
     private double price;
-    //List<MenuItems>menuItemsList;
+
 }

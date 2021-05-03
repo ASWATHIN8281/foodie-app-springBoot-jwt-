@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,4 +21,5 @@ public class Restaurant {
     private String name;
     @Size(max=40)
     private String location;
+    List<MenuItems> menuItemsList;
 }

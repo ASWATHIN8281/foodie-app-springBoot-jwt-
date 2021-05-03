@@ -52,10 +52,10 @@ public class RestaurantDAOImpl implements RestaurantDAO {
         if(!repository.existsByName(restaurant.getName())) {
             throw new RestaurantNotFoundException();
         }
-            Restaurant getRestaurant=repository.findById(restaurant.getRestaurantId()).get();
+            /* Restaurant getRestaurant=repository.findById(restaurant.getRestaurantId()).get();
             getRestaurant.setName(restaurant.getName());
-            getRestaurant.setLocation(restaurant.getLocation());
-            updatedRestaurant=repository.save(getRestaurant);
+            getRestaurant.setLocation(restaurant.getLocation());*/
+            updatedRestaurant=repository.save(restaurant);
             return updatedRestaurant;
     }
 

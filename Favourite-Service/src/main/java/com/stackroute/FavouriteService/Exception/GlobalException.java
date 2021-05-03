@@ -34,4 +34,12 @@ public class GlobalException extends ResponseEntityExceptionHandler {
         return new ResponseEntity<String>(message3, HttpStatus.UNAUTHORIZED);
 
     }
+    @Value(value = "${data.exception.message4}")
+    private String message4;
+    @ExceptionHandler(value = UserNameNotFoundException.class)
+    public ResponseEntity<String>UserNameNotFound(UserNameNotFoundException e) {
+        return new ResponseEntity<String>(message4, HttpStatus.FORBIDDEN);
+
+    }
+
 }

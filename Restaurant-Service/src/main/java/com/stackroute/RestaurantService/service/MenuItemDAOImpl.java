@@ -39,7 +39,7 @@ public class MenuItemDAOImpl implements MenuItemDAO{
            throw new MenuItemNotFoundException();
         }
         menuItems=repository.findByName(menuItem);
-        repository.deleteMenuItem(menuItem);
+        repository.deleteByname(menuItem);
         return menuItems;
     }
 

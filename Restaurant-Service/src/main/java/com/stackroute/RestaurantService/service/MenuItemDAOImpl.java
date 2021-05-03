@@ -51,11 +51,9 @@ public class MenuItemDAOImpl implements MenuItemDAO{
         if(!repository.existsByName(menuItems.getName())){
             throw new MenuItemNotFoundException();
         }
-        MenuItems getMenuItem=repository.findById(menuItems.getMenuId()).get();
-        getMenuItem.setDescription(menuItems.getDescription());
-        getMenuItem.setName(menuItems.getName());
-        getMenuItem.setPrice(menuItems.getPrice());
-        updatedMenuItems=repository.save(getMenuItem);
+       // MenuItems getMenuItem=new MenuItems(menuItems.getMenuId(),menuItems.getCategory(),menuItems.getName(),
+        //        menuItems.getDescription(),menuItems.getPrice());
+        updatedMenuItems=repository.save(menuItems);
         return updatedMenuItems;
 
     }

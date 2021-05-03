@@ -85,8 +85,8 @@ class FavouriteServiceTest {
     public void givenGetAllThenShouldReturnListOfAllFavourites() {
         repository.save(favourite);
         when(repository.findAll()).thenReturn(favouriteList);
-        List<Favourite> favouriteList = service.getAll();
-        assertEquals(favouriteList, favouriteList);
+        List<Favourite> favouriteList1 = service.getAll();
+        assertEquals(favouriteList, favouriteList1);
         verify(repository, times(1)).save(favourite);
         verify(repository, times(1)).findAll();
     }

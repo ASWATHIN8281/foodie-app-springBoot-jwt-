@@ -11,6 +11,6 @@ public interface RestaurantDAO {
     List <Restaurant>getAllRestaurants();
     Restaurant deleteRestaurant(int id)throws RestaurantNotFoundException;
     Restaurant updateRestaurant(Restaurant restaurant)throws RestaurantNotFoundException;
-    Restaurant findByRestaurantId(int id) throws RestaurantNotFoundException;
-    Restaurant findByRestaurantLocation(String location)throws RestaurantNotFoundException;
+    Restaurant findByLocation(String location)throws RestaurantNotFoundException;
+    Restaurant findByName(String name)throws RestaurantNotFoundException;
 }

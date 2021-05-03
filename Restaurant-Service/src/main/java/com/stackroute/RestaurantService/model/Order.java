@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 public class Order {
     @Id
-    private int id;
+    private int orderId;
     private double price;
     private long orderTime;
     private long deliveryTime;

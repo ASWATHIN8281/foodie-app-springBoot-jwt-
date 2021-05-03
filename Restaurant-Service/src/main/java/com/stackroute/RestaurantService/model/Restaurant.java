@@ -15,9 +15,9 @@ import javax.validation.constraints.Size;
 @Document(collection = "RestaurantDB")
 public class Restaurant {
     @Id
-    private int id;
+    private int restaurantId;
     @Size(max=30)
-    private String rName;
+    private String name;
     @Size(max=40)
     private String location;
 }

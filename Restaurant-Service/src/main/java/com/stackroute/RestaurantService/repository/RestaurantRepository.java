@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RestaurantRepository extends MongoRepository<Restaurant,Integer> {
-    Restaurant findByRestaurantId(int id);
-    Restaurant findByRestaurantLocation(String location);
+    Restaurant findByLocation(String location);
+    Restaurant findByName(String name);
+    boolean existsByName(String RestaurantName);
+    boolean existsByLocation(String location);
 }

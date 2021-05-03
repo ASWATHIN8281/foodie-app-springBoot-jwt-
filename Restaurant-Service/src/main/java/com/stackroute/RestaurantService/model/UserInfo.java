@@ -11,13 +11,13 @@ import javax.validation.constraints.Size;
 @Setter
 public class UserInfo {
     @Id
-    private int id;
+    private int userId;
     @Size(max=30)
-    private  String fName;
+    private  String userFirstName;
     @Size(max=30)
-    private  String lName;
-    private  long phone;
+    private  String userLastName;
+    private  long userPhone;
     @Size(max=100)
-    private String address;
+    private String userAddress;
 
 }

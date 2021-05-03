@@ -20,30 +20,26 @@ public class MenuItemsController {
     private MenuItemDAO service;
     @PostMapping("menuitem")
     public ResponseEntity<MenuItems> saveNewMenu(@RequestBody MenuItems menuItems) throws MenuItemAlreadyExistsException {
-        return new ResponseEntity<MenuItems>(service.addNewItem(menuItems), HttpStatus.CREATED);
+        return new ResponseEntity<MenuItems>(service.addMenuItems(menuItems), HttpStatus.CREATED);
     }
     @GetMapping("menuitems")
     public ResponseEntity<List<MenuItems>> getAllMenuItems() {
-        return new ResponseEntity<List<MenuItems>>((List<MenuItems>) service.getAllItemsInMenu(), HttpStatus.OK);
+        return new ResponseEntity<List<MenuItems>>((List<MenuItems>) service.getAllMenuItems(), HttpStatus.OK);
 
     }
-    @DeleteMapping("menuitem/{id}")
-    public ResponseEntity<MenuItems>getMenuAfterDeleting(@PathVariable("id")int id)throws MenuItemNotFoundException{
-        return new ResponseEntity<MenuItems>(service.deleteItemInMenu(id),HttpStatus.OK);
+    @DeleteMapping("menuitem/{name}")
+    public ResponseEntity<MenuItems>deleteMenuByMenuItem(@PathVariable("name")String name )throws MenuItemNotFoundException{
+        return new ResponseEntity<MenuItems>(service.deleteMenuItems(name),HttpStatus.OK);
     }
 
     @PutMapping("menuitems")
     public ResponseEntity<MenuItems> updateMenuItems(@RequestBody MenuItems menuItems) throws  MenuItemNotFoundException{
         return new ResponseEntity<MenuItems>(service.updateMenuItems(menuItems),HttpStatus.OK);
     }
-    @GetMapping("menuitem/{id}")
-    public ResponseEntity<MenuItems >getMenuById(@PathVariable int id)throws MenuItemNotFoundException{
-        return new ResponseEntity<MenuItems>(service.findByMenuId(id),HttpStatus.FOUND);
-    }
 
-    @GetMapping("menuitems/{itemname}")
-    public ResponseEntity<MenuItems> getMenuByName(@PathVariable String itemname)throws MenuItemNotFoundException{
-        return new ResponseEntity<MenuItems>(service.findByMenuName(itemname),HttpStatus.FOUND);
+    @GetMapping("menuitems/{name}")
+    public ResponseEntity<MenuItems> getMenuByName(@PathVariable String name)throws MenuItemNotFoundException{
+        return new ResponseEntity<MenuItems>(service.findByMenuName(name),HttpStatus.FOUND);
     }
 
 }

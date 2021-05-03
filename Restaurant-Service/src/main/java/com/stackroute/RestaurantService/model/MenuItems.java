@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@Document(collection = "MenuDB")
+@Document(collection = "MenuItems")
 public class MenuItems {
     @Id
     private int menuId;

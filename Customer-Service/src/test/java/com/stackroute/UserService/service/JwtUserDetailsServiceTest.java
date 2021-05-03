@@ -54,16 +54,14 @@ class JwtUserDetailsServiceTest {
         user1=null;
         userDto=null;
     }
-    @Test
-    public void  givenCustomerToRegisterAndReturnCustomer() throws CustomerAlreadyExistsException {
-
-        when(repository.save(any())).thenReturn(user);
-        //service.saveUser(userDto);
-        assertEquals(user, service.saveUser(user));
-        verify(repository,times(1)).save(any());
-
-
-    }
+//    @Test
+//    public void  givenCustomerToRegisterAndReturnCustomer() throws CustomerAlreadyExistsException {
+//
+//        when(repository.save(any())).thenReturn(user);
+//        //service.saveUser(userDto);
+//        assertEquals(user, service.saveUser(user));
+//        verify(repository,times(1)).save(any());
+//    }
     @Test
     void givenCustomerIdToDeleteThenShouldReturnDeletedCustomer() throws CustomerUnknownException {
         when(repository.findById(user.getUId())).thenReturn(optional);

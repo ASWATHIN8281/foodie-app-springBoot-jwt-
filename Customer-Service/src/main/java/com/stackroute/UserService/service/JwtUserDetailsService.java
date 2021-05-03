@@ -40,13 +40,13 @@ public class JwtUserDetailsService implements UserDetailsService {
                 logger.error("Customer account already exists ");
                 throw new CustomerAlreadyExistsException();
             }
-//            User user=null;
+            //User user=null;
 //            user.setAddress(userDto.getAddress());
 //            user.setUsername(userDto.getUsername());
 //            user.setContactNum(userDto.getContactNum());
 //            user.setFirstName(userDto.getFirstName());
 //            user.setLastName(userDto.getLastName());
-//            user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
             logger.info("Customer saved");
             return repository.save(user);
     }

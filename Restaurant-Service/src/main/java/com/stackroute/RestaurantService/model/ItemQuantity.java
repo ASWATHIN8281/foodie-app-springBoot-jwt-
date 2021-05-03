@@ -5,12 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.Size;
 @NoArgsConstructor
 @Setter
 @Getter
 @AllArgsConstructor
+@Document(collection = "ItemQuantity")
 public class ItemQuantity {
     @Id
     private int itemId;

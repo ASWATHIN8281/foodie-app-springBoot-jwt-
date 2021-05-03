@@ -19,12 +19,19 @@
 //@EnableWebSecurity
 //@EnableGlobalMethodSecurity(prePostEnabled = true)
 //public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-//
 //    @Autowired
 //    private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 //
+////    @Autowired
+////    private UserDetailsService jwtUserDetailsService;
+//
 //    @Autowired
 //    private JwtRequestFilter jwtRequestFilter;
+//
+////    @Autowired
+////    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+////        auth.userDetailsService(jwtUserDetailsService).passwordEncoder(passwordEncoder());
+////    }
 //
 //    @Bean
 //    public PasswordEncoder passwordEncoder() {
@@ -42,7 +49,7 @@
 //
 //        httpSecurity.csrf().disable()
 //
-//                .authorizeRequests().antMatchers("/authenticate","/register").permitAll().
+//                .authorizeRequests().antMatchers("/login","/register").permitAll().
 //                anyRequest().authenticated().and().
 //                exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and()
 //                .sessionManagement()

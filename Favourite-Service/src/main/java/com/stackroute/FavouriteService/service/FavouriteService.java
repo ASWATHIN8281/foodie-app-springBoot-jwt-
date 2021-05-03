@@ -58,7 +58,7 @@ logger.info("The foodItem is deleted.");
 
     @Override
     public List<Favourite> getFavouriteByUsername(String username) {
-        return (List<Favourite>) repository.findByUsername(username);
+        return  repository.findByUsername(username);
     }
 
     @Override

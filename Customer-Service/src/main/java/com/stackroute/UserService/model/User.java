@@ -21,13 +21,14 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int uId;
-    @NotNull(message = "Name is mandatory")
+    @NotNull
+    @Size(min = 3,max = 30,message = "The firstname should not blank and must contain minimum 3 character and max 30 character")
     private String firstName;
     private String lastName;
-    @Email(message = "should be in asw@domain.com format")
-    @NotNull(message = "Email is mandatory")
+    @Email
+    @NotNull(message = "The username cannot be null")
     private String username;
-    @NotNull(message = "Phone number is mandatory")
+    @NotNull(message = "The contactNum cannot be null")
     private String contactNum;
     @NotNull(message = "Address is mandatory")
     private String address;

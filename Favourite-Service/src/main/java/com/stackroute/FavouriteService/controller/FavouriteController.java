@@ -15,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Slf4j
@@ -29,7 +30,7 @@ public class FavouriteController {
     private FavouriteDao favouriteDao;
 
     @PostMapping("/favourite")
-    public ResponseEntity<Favourite> addFavourite(@RequestBody Favourite favourite) throws FoodItemAlreadyExistsException {
+    public ResponseEntity<Favourite> addFavourite( @Valid @RequestBody Favourite favourite) throws FoodItemAlreadyExistsException {
 
             if (favourite==null){
             logger.error("There is a error.");

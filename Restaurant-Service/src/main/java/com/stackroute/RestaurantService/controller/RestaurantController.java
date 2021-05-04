@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 @AllArgsConstructor
 @RestController
@@ -19,7 +20,7 @@ public class RestaurantController {
     @Autowired
     private RestaurantDAO service;
     @PostMapping("restaurant")
-    public ResponseEntity<Restaurant>saveRestaurant(@RequestBody Restaurant restaurant) throws RestaurantAlreadyExistsException {
+    public ResponseEntity<Restaurant>saveRestaurant(@Valid @RequestBody Restaurant restaurant) throws RestaurantAlreadyExistsException {
         return new ResponseEntity<Restaurant>(service.addRestaurant(restaurant), HttpStatus.CREATED);
     }
     @GetMapping("restaurants")
@@ -32,7 +33,7 @@ public class RestaurantController {
     }
 
     @PutMapping("restaurant")
-    public ResponseEntity<Restaurant> updateRestaurant(@RequestBody Restaurant restaurant)throws RestaurantNotFoundException {
+    public ResponseEntity<Restaurant> updateRestaurant(@Valid @RequestBody Restaurant restaurant)throws RestaurantNotFoundException {
         return new ResponseEntity<Restaurant>(service.updateRestaurant(restaurant),HttpStatus.OK);
     }
 

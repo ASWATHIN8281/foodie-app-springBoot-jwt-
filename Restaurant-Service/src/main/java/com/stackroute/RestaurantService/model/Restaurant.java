@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.checkerframework.common.aliasing.qual.Unique;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,6 +19,7 @@ import java.util.List;
 @Document(collection = "Restaurant")
 public class Restaurant {
     @Id
+    @Unique
     private int restaurantId;
    @NotNull
     @Size(min = 3,max=30,message = "Name cannot be null")
@@ -25,5 +27,6 @@ public class Restaurant {
    @NotNull
     @Size(min = 3,max=40,message = "The location cannot be null")
     private String location;
+   @NotNull(message = "The menu list of restaurant cannot be null")
     List<MenuItems> menuItemsList;
 }

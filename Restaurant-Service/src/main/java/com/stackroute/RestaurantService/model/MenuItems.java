@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
 
@@ -18,9 +19,11 @@ import java.util.List;
 public class MenuItems {
     @Id
     private int menuId;
-    @Size(max=30)
+    @NotNull
+    @Size(min = 3,max=30,message = "The category cannot be null and must contain minimum 3 characters")
     private String category;
-    @Size(max=40)
+    @NotNull
+    @Size(min = 3,max=40,message = "The name cannot be null and must contain 3 minimum characters")
     private String name;
     @Size(max=100)
     private String description;

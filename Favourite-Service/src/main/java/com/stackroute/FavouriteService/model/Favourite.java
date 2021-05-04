@@ -22,19 +22,28 @@ import javax.validation.constraints.Size;
 public class Favourite {
     @Id
     @NotNull
+
     private int id;
-    @Size(max = 40)
+
     @NotNull
+    @Size(min = 3,max = 40,message = "The RestaurantName should be of minimum 3 character and maximum 40 character.")
     private  String restaurantName;
-    @Size(max = 40)
+
+
     @NotNull
+    @Size(min = 3,max = 40,message = "The Category should contain min 3 character and max 40 character.")
     private String category;
-    @Size(max = 30)
+
+
     @NotNull
+    @Size(min = 2,max = 30,message = "The foodItem should contain minimum 2 characters")
     private String foodItem;
+
     @NotNull
     private double price;
+
     @NotNull
+    @Size(min = 3,message = "The Username should contain minimum 3 characters")
     private String username;
   //add user rate
 

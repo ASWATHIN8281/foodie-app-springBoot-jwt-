@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 @AllArgsConstructor
 @RestController
@@ -18,7 +19,7 @@ public class OrderController {
     private OrderDAO service;
 
     @PostMapping("/order")
-    public ResponseEntity<Order> saveOrder(@RequestBody Order order) throws OrderAlreadyPlacedByCustomerException {
+    public ResponseEntity<Order> saveOrder(@Valid @RequestBody Order order) throws OrderAlreadyPlacedByCustomerException {
         return new ResponseEntity<Order>(service.addOrder(order), HttpStatus.CREATED);
     }
 

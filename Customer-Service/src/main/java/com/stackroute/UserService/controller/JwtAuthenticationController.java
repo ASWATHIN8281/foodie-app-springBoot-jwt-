@@ -15,6 +15,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
@@ -40,7 +42,7 @@ public class JwtAuthenticationController {
         return ResponseEntity.ok(new JwtResponse(token));
     }
     @PostMapping("/register")
-    public ResponseEntity<?> saveUser(@RequestBody User user) throws Exception{
+    public ResponseEntity<?> saveUser(@Valid @RequestBody User user) throws Exception{
         return ResponseEntity.ok(userDetailsService.saveUser(user));
     }
     private void authenticate(String username, String password) throws Exception {

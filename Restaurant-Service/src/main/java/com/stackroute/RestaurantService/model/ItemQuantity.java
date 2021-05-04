@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 @NoArgsConstructor
 @Setter
@@ -16,7 +17,8 @@ import javax.validation.constraints.Size;
 public class ItemQuantity {
     @Id
     private int itemId;
-    @Size(max=30)
+    @NotNull
+    @Size(min = 3,max = 30,message = "itemName cannot be null and must contain 3 minimum character")
     private String itemName;
     private double price;
     private  int quantity;

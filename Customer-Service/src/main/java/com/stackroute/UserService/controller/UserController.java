@@ -13,6 +13,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/api/v1")
 @AllArgsConstructor
@@ -23,7 +25,7 @@ public class UserController {
     private JwtUserDetailsService service;
     private static final Logger logger = (Logger) LoggerFactory.getLogger(UserController.class);
     @PutMapping("/customer")
-    public ResponseEntity<User> updateUserDetails(@RequestBody User user) throws CustomerUnknownException {
+    public ResponseEntity<User> updateUserDetails(@Valid @RequestBody User user) throws CustomerUnknownException {
         logger.info("Customer account updated");
         return new ResponseEntity<>(service.updateUser(user), HttpStatus.CREATED);
     }

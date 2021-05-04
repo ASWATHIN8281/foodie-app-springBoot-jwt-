@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
+import javax.validation.Valid;
 import java.util.List;
 @AllArgsConstructor
 @RestController
@@ -19,7 +20,7 @@ public class MenuItemsController {
     @Autowired
     private MenuItemDAO service;
     @PostMapping("menuitem")
-    public ResponseEntity<MenuItems> saveNewMenu(@RequestBody MenuItems menuItems) throws MenuItemAlreadyExistsException {
+    public ResponseEntity<MenuItems> saveNewMenu(@Valid @RequestBody MenuItems menuItems) throws MenuItemAlreadyExistsException {
         return new ResponseEntity<MenuItems>(service.addMenuItems(menuItems), HttpStatus.CREATED);
     }
     @GetMapping("menuitems")
@@ -33,7 +34,7 @@ public class MenuItemsController {
     }
 
     @PutMapping("menuitems")
-    public ResponseEntity<MenuItems> updateMenuItems(@RequestBody MenuItems menuItems) throws  MenuItemNotFoundException{
+    public ResponseEntity<MenuItems> updateMenuItems(@Valid @RequestBody MenuItems menuItems) throws  MenuItemNotFoundException{
         return new ResponseEntity<MenuItems>(service.updateMenuItems(menuItems),HttpStatus.OK);
     }
 

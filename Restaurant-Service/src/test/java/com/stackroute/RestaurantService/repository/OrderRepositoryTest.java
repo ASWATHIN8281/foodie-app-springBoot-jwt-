@@ -2,6 +2,7 @@ package com.stackroute.RestaurantService.repository;
 
 import com.stackroute.RestaurantService.model.Order;
 import com.stackroute.RestaurantService.model.UserInfo;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -35,8 +36,11 @@ class OrderRepositoryTest {
         order1.setDeliveryTime(30);
     }
 
-
-
+    @AfterEach
+    void tearDown() {
+        order=null;
+        order1=null;
+    }
 
     @Test
     public void givenOrderToAddThenShouldReturnAddedOrder() {
@@ -48,7 +52,7 @@ class OrderRepositoryTest {
     @Test
     public void givenGetAllOrdersThenShouldReturnListOfAllOrders(){
         orderRepository.save(order);
-        //orderRepository.save(order1);
+        orderRepository.save(order1);
         List<Order>orderList=orderRepository.findAll();
         assertEquals(2,orderList.get(1).getOrderId());
     }

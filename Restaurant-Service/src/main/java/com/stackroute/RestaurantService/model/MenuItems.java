@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.checkerframework.common.aliasing.qual.Unique;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,6 +19,7 @@ import java.util.List;
 @Document(collection = "MenuItems")
 public class MenuItems {
     @Id
+    @Unique
     private int menuId;
     @NotNull
     @Size(min = 3,max=30,message = "The category cannot be null and must contain minimum 3 characters")

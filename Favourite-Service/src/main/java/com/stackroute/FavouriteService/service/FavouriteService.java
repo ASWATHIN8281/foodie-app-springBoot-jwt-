@@ -2,20 +2,19 @@ package com.stackroute.FavouriteService.service;
 
 import com.stackroute.FavouriteService.Exception.FoodItemAlreadyExistsException;
 import com.stackroute.FavouriteService.Exception.FoodItemNotFoundException;
-import com.stackroute.FavouriteService.Exception.UserNameNotFoundException;
+import com.stackroute.FavouriteService.Exception.UsernameNotFoundException;
 import com.stackroute.FavouriteService.controller.FavouriteController;
 import com.stackroute.FavouriteService.model.Favourite;
 import com.stackroute.FavouriteService.repository.FavouriteRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+
 @Slf4j
 @Service
 @AllArgsConstructor
@@ -56,10 +55,10 @@ logger.info("The foodItem is deleted.");
     }
 
     @Override
-    public List<Favourite> getFavouriteByUsername(String username)throws UserNameNotFoundException {
+    public List<Favourite> getFavouriteByUsername(String username)throws UsernameNotFoundException {
         Favourite favourite=null;
-        if (!repository.existsByUserName(username)){
-            throw new UserNameNotFoundException();
+        if (!repository.existsByUsername(username)){
+            throw new UsernameNotFoundException();
 
         }
         logger.info("This is the list of Favourites  of User");

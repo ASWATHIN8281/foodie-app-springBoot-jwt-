@@ -5,6 +5,7 @@ import com.stackroute.FavouriteService.Exception.FoodItemAlreadyExistsException;
 import com.stackroute.FavouriteService.model.Favourite;
 import com.stackroute.FavouriteService.service.FavouriteService;
 import net.bytebuddy.pool.TypePool;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -45,6 +46,11 @@ class FavouriteControllerTest {
         favourite=new Favourite(1,"Tito's Cafe","Junk","Burger",160,"Jenis");
         optional = Optional.of(favourite);
         mockMvc= MockMvcBuilders.standaloneSetup(favouriteController).build();
+    }
+
+    @AfterEach
+    void tearDown() {
+        favourite=null;
     }
 @Test
     public void givenGetAllFavouritesThenShouldReturnListOfAllFavourites() throws Exception {

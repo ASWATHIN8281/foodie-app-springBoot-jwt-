@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
+   import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -73,9 +73,10 @@ public class JwtUserDetailsService implements UserDetailsService {
         user=repository.findById(id).get();
         return user;
     }
-    public User updateUser(User user) throws CustomerUnknownException{
+    public User updateUser(User user,int id) throws CustomerUnknownException{
         User userUp=null;
-        if (!repository.existsByusername(user.getUsername())){
+        Optional optional=repository.findById(id);
+        if (!optional.isPresent()){
             logger.error("customer unknown");
 //            user.setAddress(userDto.getAddress());
 //            user.setUsername(userDto.getUsername());
@@ -86,6 +87,7 @@ public class JwtUserDetailsService implements UserDetailsService {
               throw new CustomerUnknownException();
         }
         logger.info("customer details updated");
+        userUp=repository.findById(id).get();
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userUp= repository.save(user);
         return userUp;

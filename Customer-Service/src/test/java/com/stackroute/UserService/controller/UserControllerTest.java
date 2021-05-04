@@ -66,17 +66,17 @@ class UserControllerTest {
 
     @Test
     public void  givenCustomerToUpdateAndReturnCustomer() throws Exception {
-        when(service.updateUser(any())).thenReturn(user);
-        mockMvc.perform(put("/api/v1/customer")
+        when(service.updateUser(any(),anyInt())).thenReturn(user);
+        mockMvc.perform(put("/api/v1/customer?id=1")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(user)))
                 .andExpect(status().isCreated());
-        verify(service,times(1)).updateUser(any());
+        verify(service,times(1)).updateUser(any(),anyInt());
     }
     @Test
     void givenCustomerToUpdateThenShouldNotReturnUpdatedBlog() throws Exception {
-        when(service.updateUser((User) any())).thenThrow(CustomerUnknownException.class);
-        mockMvc.perform(put("/api/v1/customer")
+        when(service.updateUser((User) any(),anyInt())).thenThrow(CustomerUnknownException.class);
+        mockMvc.perform(put("/api/v1/customer?id=90")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(user)))
                 .andExpect(status().isConflict())

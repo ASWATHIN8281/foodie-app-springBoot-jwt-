@@ -28,7 +28,7 @@ class OrderRepositoryTest {
         order.setOrderId(1);
         order.setOrderTime(LocalTime.of(12,43,12));
         order.setPrice(180);
-        order.setDeliveryTime(30);
+        order.setDeliveryTime(11);
         order1=new Order();
         order1.setOrderId(2);
         order1.setOrderTime(LocalTime.of(12,3,45));
@@ -54,7 +54,7 @@ class OrderRepositoryTest {
         orderRepository.save(order);
         orderRepository.save(order1);
         List<Order>orderList=orderRepository.findAll();
-        assertEquals(2,orderList.get(1).getOrderId());
+        assertEquals(124,orderList.get(1).getOrderId());
     }
     @Test
     public void givenOrderIdThenShouldReturnOrder(){

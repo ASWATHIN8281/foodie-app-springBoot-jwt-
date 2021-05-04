@@ -47,7 +47,7 @@ public class OrderControllerTest {
         order.setOrderId(1);
         order.setPrice(150);
         order.setOrderTime(LocalTime.of(12,23,12));
-        order.setDeliveryTime(300000);
+        order.setDeliveryTime(30);
         orderList = new ArrayList<>();
         orderList.add(order);
     }

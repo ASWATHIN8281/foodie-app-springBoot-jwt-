@@ -30,6 +30,7 @@ public class OrderDAOImpl implements  OrderDAO {
         }
         LocalTime localTime=LocalTime.now();
         order.setOrderTime(localTime);
+        order.setPrice(order.getItemQuantityList().stream().mapToDouble(e->e.getPrice()*e.getQuantity()).sum());
         Order order1 = repository.save(order);
         return order1;
     }

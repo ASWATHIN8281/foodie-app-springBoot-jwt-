@@ -56,14 +56,13 @@ logger.info("The foodItem is deleted.");
 
     @Override
     public List<Favourite> getFavouriteByUsername(String username)throws UsernameNotFoundException {
-        Favourite favourite=null;
         if (!repository.existsByUsername(username)){
             throw new UsernameNotFoundException();
 
         }
         logger.info("This is the list of Favourites  of User");
-        favourite= (Favourite) repository.findByUsername(username);
-        return (List<Favourite>) favourite;
+        List<Favourite> favourite= repository.findByUsername(username);
+        return favourite;
     }
 
     @Override

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -43,6 +44,7 @@ public class Favourite {
     private double price;
 
     @NotNull
+    @Email
     @Size(min = 3,message = "The Username should contain minimum 3 characters")
     private String username;
   //add user rate

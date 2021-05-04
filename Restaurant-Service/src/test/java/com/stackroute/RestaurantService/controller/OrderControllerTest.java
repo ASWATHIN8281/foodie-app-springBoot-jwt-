@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +46,7 @@ public class OrderControllerTest {
         order = new Order();
         order.setOrderId(1);
         order.setPrice(150);
-        order.setOrderTime(120000);
+        order.setOrderTime(LocalTime.of(12,23,12));
         order.setDeliveryTime(300000);
         orderList = new ArrayList<>();
         orderList.add(order);

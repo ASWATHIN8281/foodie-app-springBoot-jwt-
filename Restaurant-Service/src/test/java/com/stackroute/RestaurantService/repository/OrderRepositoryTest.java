@@ -8,6 +8,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,12 +25,12 @@ class OrderRepositoryTest {
     void setUp() {
         order=new Order();
         order.setOrderId(1);
-        order.setOrderTime(30);
+        order.setOrderTime(LocalTime.of(12,43,12));
         order.setPrice(180);
         order.setDeliveryTime(30);
         order1=new Order();
         order1.setOrderId(2);
-        order1.setOrderTime(25);
+        order1.setOrderTime(LocalTime.of(12,3,45));
         order1.setPrice(250);
         order1.setDeliveryTime(30);
     }
@@ -46,7 +48,7 @@ class OrderRepositoryTest {
     @Test
     public void givenGetAllOrdersThenShouldReturnListOfAllOrders(){
         orderRepository.save(order);
-        orderRepository.save(order1);
+        //orderRepository.save(order1);
         List<Order>orderList=orderRepository.findAll();
         assertEquals(2,orderList.get(1).getOrderId());
     }

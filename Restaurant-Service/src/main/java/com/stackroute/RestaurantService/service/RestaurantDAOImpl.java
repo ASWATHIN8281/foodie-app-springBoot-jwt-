@@ -1,5 +1,6 @@
 package com.stackroute.RestaurantService.service;
 
+import com.stackroute.RestaurantService.exception.MenuItemNotFoundException;
 import com.stackroute.RestaurantService.exception.RestaurantAlreadyExistsException;
 import com.stackroute.RestaurantService.exception.RestaurantNotFoundException;
 import com.stackroute.RestaurantService.model.MenuItems;
@@ -78,6 +79,16 @@ public class RestaurantDAOImpl implements RestaurantDAO {
             throw  new RestaurantNotFoundException();
         }
         Restaurant restaurant=repository.findByName(name);
+        return restaurant;
+    }
+
+    @Override
+    public List<Restaurant> searchByMenuItems(String menuItem) throws MenuItemNotFoundException {
+        Optional optional=Optional.of(repository.findByMenuItem(menuItem));
+        if(!optional.isPresent()){
+            throw new MenuItemNotFoundException();
+        }
+        List<Restaurant> restaurant=repository.findByMenuItem(menuItem);
         return restaurant;
     }
 }

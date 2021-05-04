@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -29,10 +30,10 @@ public class User {
     private String username;
     @NotNull(message = "The contactNum cannot be null")
     private String contactNum;
-    @NotNull
+    @NotNull(message = "Address is mandatory")
     private String address;
-    @NotNull
-    @Size(min = 5,message = "required")
+    @NotNull(message = "required")
+    @Size(min = 5)
     private String password;
 
 }

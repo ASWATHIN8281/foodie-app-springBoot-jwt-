@@ -1,4 +1,5 @@
 package com.stackroute.RestaurantService.controller;
+import com.stackroute.RestaurantService.exception.MenuItemNotFoundException;
 import com.stackroute.RestaurantService.exception.RestaurantAlreadyExistsException;
 import com.stackroute.RestaurantService.exception.RestaurantNotFoundException;
 import com.stackroute.RestaurantService.model.Order;
@@ -45,5 +46,8 @@ public class RestaurantController {
         return new ResponseEntity<Restaurant>(service.findByName(name),HttpStatus.FOUND);
     }
 //fetch restaurant by menuItems
-
+    @GetMapping("restaurant/menuitem/{item}")
+    public ResponseEntity<List<Restaurant>> searchRestaurantByItem(@PathVariable String item) throws RestaurantNotFoundException, MenuItemNotFoundException {
+    return new ResponseEntity<>(service.searchByMenuItems(item),HttpStatus.FOUND);
+}
 }

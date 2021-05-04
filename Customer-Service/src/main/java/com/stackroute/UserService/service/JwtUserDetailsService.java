@@ -82,10 +82,11 @@ public class JwtUserDetailsService implements UserDetailsService {
 //            user.setContactNum(userDto.getContactNum());
 //            user.setFirstName(userDto.getFirstName());
 //            user.setLastName(userDto.getLastName());
-//            user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+
               throw new CustomerUnknownException();
         }
         logger.info("customer details updated");
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userUp= repository.save(user);
         return userUp;
     }

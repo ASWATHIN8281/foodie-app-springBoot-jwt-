@@ -2,6 +2,7 @@ package com.stackroute.FavouriteService.repository;
 
 import com.stackroute.FavouriteService.model.Favourite;
 import com.stackroute.FavouriteService.repository.FavouriteRepository;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,12 @@ import java.util.Optional;
 class FavouriteRepositoryTest {
     @Autowired
     private FavouriteRepository repository;
+    private Favourite favourite;
 
-
+    @AfterEach
+    void tearDown() {
+        favourite=null;
+    }
     @Test
     public void givenFavouriteToSaveThenShouldReturnSavedFavourite(){
         Favourite favourite=new Favourite(2,"Tito's Cafe","Junk","Burger",160,"Jenis");

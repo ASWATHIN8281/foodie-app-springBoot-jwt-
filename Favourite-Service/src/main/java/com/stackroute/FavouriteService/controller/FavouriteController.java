@@ -2,7 +2,7 @@ package com.stackroute.FavouriteService.controller;
 
 import com.stackroute.FavouriteService.Exception.FoodItemAlreadyExistsException;
 import com.stackroute.FavouriteService.Exception.FoodItemNotFoundException;
-import com.stackroute.FavouriteService.Exception.UserNameNotFoundException;
+import com.stackroute.FavouriteService.Exception.UsernameNotFoundException;
 import com.stackroute.FavouriteService.model.Favourite;
 import com.stackroute.FavouriteService.service.FavouriteDao;
 import lombok.AllArgsConstructor;
@@ -53,7 +53,7 @@ public class FavouriteController {
     }
     @GetMapping("/favourite/{username}")
     public ResponseEntity<List<Favourite>>getFavouriteByUsername(@PathVariable String username)
-            throws UserNameNotFoundException {
+            throws UsernameNotFoundException {
         logger.info("This is the list of favourites of",username);
         return new ResponseEntity<>(( favouriteDao.getFavouriteByUsername(username)),HttpStatus.FOUND);
     }

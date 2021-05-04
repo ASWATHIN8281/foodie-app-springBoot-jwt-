@@ -13,6 +13,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -52,7 +53,7 @@ class OrderDAOImplTest {
         menuItems=new MenuItems(1,"Veg","GobiManchurian","vege",120);
         List<MenuItems> menuItemsList=new ArrayList<>(Arrays.asList(menuItems));
         restaurant=new Restaurant(1,"Clarks cafe","janimpur",menuItemsList);
-        order=new Order(1,160,30,20,userInfo,restaurant,itemQuantityList);
+        order=new Order(1,160, LocalTime.of(12,23,45),20,userInfo,restaurant,itemQuantityList);
 
         optional=Optional.of(order);
 

@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalTime;
 import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,7 +19,7 @@ public class Order {
     @Id
     private int orderId;
     private double price;
-    private long orderTime;
+    private LocalTime orderTime;
     private long deliveryTime;
     UserInfo userInfo;
     Restaurant restaurant;

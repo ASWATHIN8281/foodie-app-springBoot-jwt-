@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +28,8 @@ public class OrderDAOImpl implements  OrderDAO {
         if (repository.existsById(order.getOrderId())) {
             throw new OrderAlreadyPlacedByCustomerException();
         }
+        LocalTime localTime=LocalTime.now();
+        order.setOrderTime(localTime);
         Order order1 = repository.save(order);
         return order1;
     }

@@ -2953,3 +2953,81 @@ Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'Ș
 2021-05-04 06:55:32.223  INFO 18104 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-05-04 06:55:32.240  INFO 18104 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-05-04 06:55:32.302  INFO 18104 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-05-04 08:01:04.152  INFO 24652 --- [restartedMain] c.s.UserService.UserServiceApplication   : Starting UserServiceApplication on ip-172-31-46-249 with PID 24652 (/home/ubuntu/Desktop/Foodie-App/Customer-Service/target/classes started by ubuntu in /home/ubuntu/Desktop/Foodie-App)
+2021-05-04 08:01:04.174  INFO 24652 --- [restartedMain] c.s.UserService.UserServiceApplication   : No active profile set, falling back to default profiles: default
+2021-05-04 08:01:04.444  INFO 24652 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-04 08:01:04.445  INFO 24652 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-04 08:01:06.775  INFO 24652 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-04 08:01:06.869  INFO 24652 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78ms. Found 1 JPA repository interfaces.
+2021-05-04 08:01:07.352  INFO 24652 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2489086f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-04 08:01:07.358  INFO 24652 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-04 08:01:07.926  INFO 24652 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-04 08:01:07.942  INFO 24652 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-04 08:01:07.943  INFO 24652 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-04 08:01:08.099  INFO 24652 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-04 08:01:08.100  INFO 24652 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3649 ms
+2021-05-04 08:01:08.382  INFO 24652 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-04 08:01:08.440  INFO 24652 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-05-04 08:01:08.677  INFO 24652 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-04 08:01:08.840  INFO 24652 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-04 08:01:09.392  INFO 24652 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-04 08:01:09.436  INFO 24652 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-04 08:01:10.541  INFO 24652 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-04 08:01:10.552  INFO 24652 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-04 08:01:10.985  WARN 24652 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-04 08:01:11.198  INFO 24652 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-04 08:01:11.959  INFO 24652 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@746cd096, org.springframework.security.web.context.SecurityContextPersistenceFilter@5ff57c38, org.springframework.security.web.header.HeaderWriterFilter@1aab4b61, org.springframework.security.web.authentication.logout.LogoutFilter@20fff7c9, com.stackroute.UserService.config.JwtRequestFilter@23c8ce29, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c31e261, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@180ac8d1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@72c2e6bf, org.springframework.security.web.session.SessionManagementFilter@1ff02609, org.springframework.security.web.access.ExceptionTranslationFilter@2b99e9bd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a05b1b5]
+2021-05-04 08:01:12.231  INFO 24652 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-04 08:01:12.574  INFO 24652 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-05-04 08:01:12.590  INFO 24652 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-05-04 08:01:12.607  INFO 24652 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-05-04 08:01:12.617  INFO 24652 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-05-04 08:01:12.816  INFO 24652 --- [restartedMain] c.s.UserService.UserServiceApplication   : Started UserServiceApplication in 9.984 seconds (JVM running for 11.658)
+2021-05-04 08:02:09.180  INFO 24652 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-04 08:02:09.181  INFO 24652 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-04 08:02:09.206  INFO 24652 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 25 ms
+2021-05-04 08:02:09.235  WARN 24652 --- [http-nio-8081-exec-2] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-04 08:04:44.980  INFO 24652 --- [http-nio-8081-exec-5] c.s.U.controller.UserController          : Customer account updated
+2021-05-04 08:04:45.021  INFO 24652 --- [http-nio-8081-exec-5] c.s.U.service.JwtUserDetailsService      : customer details updated
+2021-05-04 08:05:37.042  INFO 24652 --- [http-nio-8081-exec-6] c.s.U.controller.UserController          : Customer account updated
+2021-05-04 08:05:37.047 ERROR 24652 --- [http-nio-8081-exec-6] c.s.U.service.JwtUserDetailsService      : customer unknown
+2021-05-04 08:05:37.075  WARN 24652 --- [http-nio-8081-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.stackroute.UserService.exception.CustomerUnknownException]
+2021-05-04 09:30:12.876  INFO 24652 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-04 09:30:12.887  INFO 24652 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-04 09:30:12.900  INFO 24652 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-05-04 09:30:12.939  INFO 24652 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-05-04 09:30:13.385  INFO 24652 --- [restartedMain] c.s.UserService.UserServiceApplication   : Starting UserServiceApplication on ip-172-31-46-249 with PID 24652 (/home/ubuntu/Desktop/Foodie-App/Customer-Service/target/classes started by ubuntu in /home/ubuntu/Desktop/Foodie-App)
+2021-05-04 09:30:13.385  INFO 24652 --- [restartedMain] c.s.UserService.UserServiceApplication   : No active profile set, falling back to default profiles: default
+2021-05-04 09:30:14.265  INFO 24652 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-04 09:30:14.299  INFO 24652 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32ms. Found 1 JPA repository interfaces.
+2021-05-04 09:30:14.607  INFO 24652 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7ccd753a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-04 09:30:14.611  INFO 24652 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-04 09:30:14.855  INFO 24652 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-04 09:30:14.856  INFO 24652 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-04 09:30:14.856  INFO 24652 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-04 09:30:14.896  INFO 24652 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-04 09:30:14.897  INFO 24652 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1498 ms
+2021-05-04 09:30:14.928 ERROR 24652 --- [restartedMain] o.s.b.web.embedded.tomcat.TomcatStarter  : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtRequestFilter': Unsatisfied dependency expressed through field 'jwtUserDetailsService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.stackroute.UserService.service.JwtUserDetailsService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2021-05-04 09:30:14.956  INFO 24652 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-05-04 09:30:14.958  WARN 24652 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2021-05-04 09:30:14.967  INFO 24652 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-05-04 09:30:14.995 ERROR 24652 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field jwtUserDetailsService in com.stackroute.UserService.config.JwtRequestFilter required a bean of type 'com.stackroute.UserService.service.JwtUserDetailsService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.stackroute.UserService.service.JwtUserDetailsService' in your configuration.
+

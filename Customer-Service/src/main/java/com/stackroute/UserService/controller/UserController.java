@@ -25,9 +25,9 @@ public class UserController {
     private JwtUserDetailsService service;
     private static final Logger logger = (Logger) LoggerFactory.getLogger(UserController.class);
     @PutMapping("/customer")
-    public ResponseEntity<User> updateUserDetails(@Valid @RequestBody User user) throws CustomerUnknownException {
+    public ResponseEntity<User> updateUserDetails(@Valid @RequestBody User user,@RequestParam (value = "id") int id) throws CustomerUnknownException {
         logger.info("Customer account updated");
-        return new ResponseEntity<>(service.updateUser(user), HttpStatus.CREATED);
+        return new ResponseEntity<>(service.updateUser(user,id), HttpStatus.CREATED);
     }
     @DeleteMapping("/customer/{id}")
     public ResponseEntity<User> deleteUserDetails(@PathVariable int id) throws CustomerUnknownException {

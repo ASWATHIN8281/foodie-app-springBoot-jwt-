@@ -16,12 +16,27 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 @Slf4j
+
+/**
+ * @Service indicates annotated class is a service which hold business logic in the Service layer
+ */
+
 @Service
 @AllArgsConstructor
 public class RestaurantDAOImpl implements RestaurantDAO {
+
+    /**
+     * Constructor based Dependency injection to inject Restaurant Repository here
+     */
+
     @Autowired
     private RestaurantRepository repository;
     private static final Logger logger = (Logger) LoggerFactory.getLogger(RestaurantDAOImpl.class);
+
+    /**
+     * Implementation of addRestaurant method
+     */
+
     @Override
     public Restaurant addRestaurant(Restaurant restaurant)throws RestaurantAlreadyExistsException {
         if(repository.existsByName(restaurant.getName())){
@@ -32,12 +47,17 @@ public class RestaurantDAOImpl implements RestaurantDAO {
         logger.info("New Restaurant added");
         return restaurant1;
     }
+    /**
+     * Implementation of getAllRestaurants method
+     */
 
     @Override
     public List<Restaurant> getAllRestaurants() {
         return repository.findAll();
     }
-
+    /**
+     * Implementation of deleteRestaurant method
+     */
     @Override
     public Restaurant deleteRestaurant(int id) throws RestaurantNotFoundException{
         Restaurant restaurant=null;
@@ -52,7 +72,9 @@ public class RestaurantDAOImpl implements RestaurantDAO {
             return restaurant;
 
     }
-
+    /**
+     * Implementation of updateRestaurant method
+     */
     @Override
     public Restaurant updateRestaurant(Restaurant restaurant) throws RestaurantNotFoundException {
         Restaurant updatedRestaurant=null;
@@ -70,7 +92,9 @@ public class RestaurantDAOImpl implements RestaurantDAO {
     }
 
 
-
+    /**
+     * Implementation of  findByLocation method
+     */
     @Override
     public List<Restaurant> findByLocation(String location) throws RestaurantNotFoundException{
        //Optional optional=Optional.of(repository.findByLocation(location));
@@ -82,7 +106,9 @@ public class RestaurantDAOImpl implements RestaurantDAO {
        logger.info("Restaurant fetched based on location");
        return restaurant;
     }
-
+    /**
+     * Implementation of  findByName method
+     */
     @Override
     public Restaurant findByName(String name) throws RestaurantNotFoundException {
        // Optional optional=Optional.of(repository.findByName(name));
@@ -94,7 +120,9 @@ public class RestaurantDAOImpl implements RestaurantDAO {
         logger.info("Restaurant  fetched based on name");
         return restaurant;
     }
-
+    /**
+     * Implementation of searchByMenuItems  method
+     */
     @Override
     public List<Restaurant> searchByMenuItems(String menuItem) throws MenuItemNotFoundException {
         Optional optional=Optional.of(repository.findByMenuItem(menuItem));

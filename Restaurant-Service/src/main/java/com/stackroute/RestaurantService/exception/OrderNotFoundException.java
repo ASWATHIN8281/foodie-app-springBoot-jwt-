@@ -1,5 +1,7 @@
 package com.stackroute.RestaurantService.exception;
-
+/**
+ * To handle  OrderNotFoundException
+ */
 public class OrderNotFoundException extends Exception{
     private String msg;
 

@@ -13,7 +13,13 @@ import static springfox.documentation.builders.PathSelectors.regex;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * @Configuration annotation indicates that a class declares one or more @Bean methods and may be processed by the Spring container to generate bean definitions and service requests for those beans at runtime.
+ */
 @Configuration
+/**
+ * @EnableSwagger2 annotation is used to enable the Swagger2 for your Spring Boot application
+ */
 @EnableSwagger2
 
 public class SwaggerConfig {

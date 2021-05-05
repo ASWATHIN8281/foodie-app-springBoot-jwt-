@@ -3,6 +3,9 @@ import com.stackroute.RestaurantService.model.MenuItems;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
+/**
+ * @Repository marks the specific class as a Data Access Object
+ */
 
 @Repository
 public interface MenuItemsRepository extends MongoRepository<MenuItems, Integer> {

@@ -18,46 +18,72 @@ import javax.validation.Valid;
 import java.util.List;
 @Slf4j
 @AllArgsConstructor
+/**
+ * RestController annotation is used to create Restful web services using Spring MVC
+ */
+
 @RestController
+/**
+ * RequestMapping annotation maps HTTP requests to handler methods
+ */
+
+
 @RequestMapping("api/v1")
 public class RestaurantController {
     @Autowired
     private RestaurantDAO service;
     private static Logger logger = (Logger) LoggerFactory.getLogger(RestaurantController.class);
-
+    /**
+     * save a new restaurant
+     */
     @PostMapping("restaurant")
     public ResponseEntity<Restaurant>saveRestaurant(@Valid @RequestBody Restaurant restaurant) throws RestaurantAlreadyExistsException {
         logger.info("Restaurant added");
         return new ResponseEntity<Restaurant>(service.addRestaurant(restaurant), HttpStatus.CREATED);
     }
+    /**
+     *retrieve all restaurants
+     */
     @GetMapping("restaurants")
     public ResponseEntity<List<Restaurant>> getAllOrders() {
         logger.info("Fetched all restaurants");
         return new ResponseEntity<List<Restaurant>>((List<Restaurant>) service.getAllRestaurants(), HttpStatus.OK);
     }
+    /**
+     * delete restaurant by id
+     */
     @DeleteMapping("restaurant/{id}")
     public ResponseEntity<Restaurant>getRestaurantAfterDeleting(@PathVariable("id")int id)throws RestaurantNotFoundException {
         logger.info("Restaurant deleted");
         return new ResponseEntity<Restaurant>(service.deleteRestaurant(id),HttpStatus.OK);
     }
-
+    /**
+     * update restaurant
+     */
     @PutMapping("restaurant")
     public ResponseEntity<Restaurant> updateRestaurant(@Valid @RequestBody Restaurant restaurant)throws RestaurantNotFoundException {
         logger.info("Restaurant updated");
         return new ResponseEntity<Restaurant>(service.updateRestaurant(restaurant),HttpStatus.OK);
     }
-
+    /**
+     * retrieve restaurant based on location
+     */
     @GetMapping("restaurant/loc/{location}")
     public ResponseEntity<List<Restaurant> >getRestaurantByLocation(@PathVariable String location)throws  RestaurantNotFoundException{
        logger.info("Fetched restaurant based on location");
         return new ResponseEntity<List<Restaurant>>(service.findByLocation(location),HttpStatus.FOUND);
     }
+    /**
+     * retrieve restaurant based on name
+     */
     @GetMapping("restaurant/name/{name}")
     public ResponseEntity<Restaurant> getRestaurantByName(@PathVariable String name)throws  RestaurantNotFoundException{
         logger.info("Fetched restaurant based on location");
         return new ResponseEntity<Restaurant>(service.findByName(name),HttpStatus.FOUND);
     }
-//fetch restaurant by menuItems
+    /**
+     * retrieve restaurant based on menu
+     */
     @GetMapping("restaurant/menuitem/{item}")
     public ResponseEntity<List<Restaurant>> searchRestaurantByItem(@PathVariable String item) throws RestaurantNotFoundException, MenuItemNotFoundException {
     logger.info("Fetched restaurant based on name");

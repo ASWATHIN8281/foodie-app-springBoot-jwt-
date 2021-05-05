@@ -1,5 +1,7 @@
 package com.stackroute.RestaurantService.exception;
-
+/**
+ * To handle  OrderAlreadyPlacedByCustomerException
+ */
 public class OrderAlreadyPlacedByCustomerException extends Exception{
     private String msg;
 

@@ -16,6 +16,9 @@ import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+    /**
+     * Exception handling for RestaurantAlreadyExists
+     */
     @Value(value = "${data.exception.message1}")
     private String message1;
     @ExceptionHandler(value = RestaurantAlreadyExistsException.class)
@@ -23,6 +26,9 @@ public class GlobalExceptionHandler {
     {
         return new ResponseEntity<String>(message1, HttpStatus.CONFLICT);
     }
+    /**
+     * Exception handling for RestaurantNot Found
+     */
     @Value(value = "${data.exception.message2}")
     private String message2;
     @ExceptionHandler(value = RestaurantNotFoundException.class)
@@ -30,6 +36,9 @@ public class GlobalExceptionHandler {
     {
         return new ResponseEntity<String>(message2, HttpStatus.NOT_FOUND);
     }
+    /**
+     * Exception handling for MenuItemsAlreadyExists
+     */
     @Value(value = "${data.exception.message3}")
     private String message3;
     @ExceptionHandler(value = MenuItemAlreadyExistsException.class)
@@ -37,6 +46,9 @@ public class GlobalExceptionHandler {
     {
         return new ResponseEntity<String>(message3, HttpStatus.CONFLICT);
     }
+    /**
+     * Exception handling for Menu Item Not Found
+     */
     @Value(value = "${data.exception.message4}")
     private String message4;
     @ExceptionHandler(value = MenuItemNotFoundException.class)
@@ -44,6 +56,9 @@ public class GlobalExceptionHandler {
     {
         return new ResponseEntity<String>(message4, HttpStatus.NOT_FOUND);
     }
+    /**
+     * Exception handling for Order not found
+     */
     @Value(value = "${data.exception.message5}")
     private String message5;
     @ExceptionHandler(value = OrderNotFoundException.class)
@@ -51,6 +66,9 @@ public class GlobalExceptionHandler {
     {
         return new ResponseEntity<String>(message5, HttpStatus.NOT_FOUND);
     }
+    /**
+     * Exception handling for order already placed by customer
+     */
     @Value(value = "${data.exception.message6}")
     private String message6;
     @ExceptionHandler(value = OrderAlreadyPlacedByCustomerException.class)
@@ -58,6 +76,9 @@ public class GlobalExceptionHandler {
     {
         return new ResponseEntity<String>(message6, HttpStatus.ALREADY_REPORTED);
     }
+    /**
+     * Exception handling for arguments not valid
+     */
     public ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
                                                                HttpHeaders headers,
                                                                HttpStatus status, WebRequest request) {

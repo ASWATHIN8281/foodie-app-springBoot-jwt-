@@ -1,0 +1,22 @@
+2021-05-05 14:09:16.192  INFO 10148 --- [restartedMain] c.s.R.RestaurantServiceApplication       : Starting RestaurantServiceApplication on ip-172-31-36-43 with PID 10148 (/home/ubuntu/Desktop/foodie-app/Restaurant-Service/target/classes started by ubuntu in /home/ubuntu/Desktop/foodie-app)
+2021-05-05 14:09:16.283  INFO 10148 --- [restartedMain] c.s.R.RestaurantServiceApplication       : No active profile set, falling back to default profiles: default
+2021-05-05 14:09:16.659  INFO 10148 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-05 14:09:16.660  INFO 10148 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-05 14:09:19.829  INFO 10148 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-05-05 14:09:19.990  INFO 10148 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 155ms. Found 3 MongoDB repository interfaces.
+2021-05-05 14:09:21.319  INFO 10148 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2021-05-05 14:09:21.333  INFO 10148 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-05 14:09:21.334  INFO 10148 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-05 14:09:21.534  INFO 10148 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-05 14:09:21.535  INFO 10148 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4874 ms
+2021-05-05 14:09:22.481  INFO 10148 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-05-05 14:09:22.614  INFO 10148 --- [cluster-ClusterId{value='6092a7129bfd054903feeb78', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2021-05-05 14:09:22.626  INFO 10148 --- [cluster-ClusterId{value='6092a7129bfd054903feeb78', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4294831}
+2021-05-05 14:09:23.079  INFO 10148 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-05 14:09:24.700  INFO 10148 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-05 14:09:25.049  INFO 10148 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2021-05-05 14:09:25.058  INFO 10148 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-05-05 14:09:25.105  INFO 10148 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-05-05 14:09:25.114  INFO 10148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-05-05 14:09:25.535  INFO 10148 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllOrdersUsingGET_1
+2021-05-05 14:09:25.702  INFO 10148 --- [restartedMain] c.s.R.RestaurantServiceApplication       : Started RestaurantServiceApplication in 10.98 seconds (JVM running for 13.573)

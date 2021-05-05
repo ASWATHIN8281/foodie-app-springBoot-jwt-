@@ -10,5 +10,5 @@ public interface OrderDAO {
     Order addOrder(Order order)throws OrderAlreadyPlacedByCustomerException;
     List<Order> getAllOrders();
     Order findByOrderId(int id)throws OrderNotFoundException;
-
+    Order deleteOrder(int id)throws  OrderNotFoundException;
 }

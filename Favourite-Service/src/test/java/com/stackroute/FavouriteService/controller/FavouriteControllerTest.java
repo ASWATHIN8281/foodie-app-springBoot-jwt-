@@ -43,7 +43,7 @@ class FavouriteControllerTest {
 
     @BeforeEach
     void setUp() {
-        favourite=new Favourite(1,"Tito's Cafe","Junk","Burger",160,"Jenis");
+        favourite=new Favourite(6,"Tito's Cafe","Junk","Burger",160,"karthik@gmail.com");
         optional = Optional.of(favourite);
         mockMvc= MockMvcBuilders.standaloneSetup(favouriteController).build();
     }

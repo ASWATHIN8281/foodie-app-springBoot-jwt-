@@ -88,4 +88,10 @@ class JwtUserDetailsServiceTest {
         User user2=service.getUserById(user.getUId());;
         verify(repository,times(2)).findById(anyInt());
     }
+    @Test
+    public void givenCustomerIdShouldNotReturnCustomer() throws CustomerUnknownException {
+        when(repository.findById(anyInt())).thenReturn(optional);
+        User user2=service.getUserById(user.getUId());;
+        verify(repository,times(2)).findById(anyInt());
+    }
 }

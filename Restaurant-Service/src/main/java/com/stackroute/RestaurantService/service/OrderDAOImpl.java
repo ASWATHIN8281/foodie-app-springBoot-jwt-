@@ -49,4 +49,15 @@ public class OrderDAOImpl implements  OrderDAO {
         Order order = repository.findById(id).get();
         return order;
     }
+
+    @Override
+    public Order deleteOrder(int id) throws OrderNotFoundException {
+        Optional optional=repository.findById(id);
+        if(!optional.isPresent()){
+            throw new OrderNotFoundException();
+        }
+        Order order=repository.findById(id).get();
+        repository.deleteById(id);
+        return order;
+    }
 }

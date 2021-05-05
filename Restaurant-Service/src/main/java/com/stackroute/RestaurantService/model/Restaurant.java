@@ -18,15 +18,26 @@ import java.util.List;
 @Setter
 @Document(collection = "Restaurant")
 public class Restaurant {
+    /**
+     * @Id annotation makes id variable as Primary key
+     * @UniqueConstraint annotation to specify that a unique constraint is to be included in the generated DDL for a primary or secondary table
+     */
+
     @Id
     @Unique
     private int restaurantId;
-   @NotNull
+
+    /**  To store restaurant name**/
+    @NotNull
     @Size(min = 3,max=30,message = "Name cannot be null")
     private String name;
+
+    /**  To store restaurant location**/
    @NotNull
     @Size(min = 3,max=40,message = "The location cannot be null")
     private String location;
+
+    /**  To store restaurant menu**/
    @NotNull(message = "The menu list of restaurant cannot be null")
     List<MenuItems> menuItemsList;
 }

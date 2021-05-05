@@ -1,12 +1,7 @@
 package com.stackroute.RestaurantService.service;
-
-import com.stackroute.RestaurantService.exception.MenuItemNotFoundException;
 import com.stackroute.RestaurantService.exception.OrderAlreadyPlacedByCustomerException;
 import com.stackroute.RestaurantService.exception.OrderNotFoundException;
-import com.stackroute.RestaurantService.exception.RestaurantAlreadyExistsException;
-import com.stackroute.RestaurantService.model.MenuItems;
 import com.stackroute.RestaurantService.model.Order;
-import com.stackroute.RestaurantService.model.Restaurant;
 import com.stackroute.RestaurantService.repository.OrderRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,14 +13,27 @@ import org.springframework.stereotype.Service;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
+
 @Slf4j
 @AllArgsConstructor
+
+/**
+ * @Service indicates annotated class is a service which hold business logic in the Service layer
+ */
+
 @Service
 public class OrderDAOImpl implements  OrderDAO {
+    /**
+     * Constructor based Dependency injection to inject Order Repository here
+     */
+
     @Autowired
     private OrderRepository repository;
     private static final Logger logger = (Logger) LoggerFactory.getLogger(OrderDAOImpl.class);
 
+    /**
+     * Implementation of addOrder method
+     */
     @Override
     public Order addOrder(Order order) throws OrderAlreadyPlacedByCustomerException {
         if (repository.existsById(order.getOrderId())) {
@@ -40,11 +48,17 @@ public class OrderDAOImpl implements  OrderDAO {
         return order1;
     }
 
+    /**
+     * Implementation of getAllOrders method
+     */
     @Override
     public List<Order> getAllOrders() {
         return repository.findAll();
     }
 
+    /**
+     * Implementation of findByOrderId method
+     */
     @Override
     public Order findByOrderId(int id) throws OrderNotFoundException {
         //Optional optional = repository.findById(id);
@@ -56,7 +70,9 @@ public class OrderDAOImpl implements  OrderDAO {
         logger.info("Order found");
         return order;
     }
-
+    /**
+     * Implementation of deleteOrder method
+     */
     @Override
     public Order deleteOrder(int id) throws OrderNotFoundException {
         Optional optional=repository.findById(id);

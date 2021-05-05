@@ -6,6 +6,9 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+/**
+ * @Repository marks the specific class as a Data Access Object
+ */
 
 @Repository
 public interface RestaurantRepository extends MongoRepository<Restaurant,Integer> {

@@ -1,5 +1,7 @@
 package com.stackroute.RestaurantService.exception;
-
+/**
+ * To handle  MenuItemAlreadyExistsException
+ */
 public class MenuItemAlreadyExistsException extends Exception{
     private String msg;
     public MenuItemAlreadyExistsException() {

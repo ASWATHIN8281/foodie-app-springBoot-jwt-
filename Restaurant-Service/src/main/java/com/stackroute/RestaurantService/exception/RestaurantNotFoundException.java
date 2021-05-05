@@ -1,5 +1,7 @@
 package com.stackroute.RestaurantService.exception;
-
+/**
+ * To handle  RestaurantNotFoundException
+ */
 public class RestaurantNotFoundException extends Exception{
     private  String msg;
     public  RestaurantNotFoundException(){

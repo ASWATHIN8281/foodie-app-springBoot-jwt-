@@ -12,15 +12,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+
 @Slf4j
 @AllArgsConstructor
+
+/**
+ * @Service indicates annotated class is a service which hold business logic in the Service layer
+ */
+
 @Service
 public class MenuItemDAOImpl implements MenuItemDAO{
+    /**
+     * Constructor based Dependency injection to inject MenuItems Repository here
+     */
     @Autowired
     private MenuItemsRepository repository;
     private static final Logger logger = (Logger) LoggerFactory.getLogger(MenuItemDAOImpl.class);
 
+    /**
+     * Implementation of  method
+     */
     @Override
     public MenuItems addMenuItems(MenuItems menuItems) throws MenuItemAlreadyExistsException {
         if (repository.existsById(menuItems.getMenuId())) {
@@ -30,12 +41,18 @@ public class MenuItemDAOImpl implements MenuItemDAO{
         MenuItems menuItems1=repository.save(menuItems);
         return menuItems1;
     }
+
+    /**
+     * Implementation of getAllMenuItems method
+     */
     @Override
     public List<MenuItems> getAllMenuItems() {
 
         return  repository.findAll();
     }
-
+    /**
+     * Implementation of deleteMenuItems method
+     */
     @Override
     public MenuItems deleteMenuItems(String  menuItem) throws MenuItemNotFoundException{
         MenuItems menuItems=null;
@@ -49,7 +66,9 @@ public class MenuItemDAOImpl implements MenuItemDAO{
         logger.info("Menu item deleted");
         return menuItems;
     }
-
+    /**
+     * Implementation of updateMenuItems method
+     */
     @Override
     public MenuItems updateMenuItems(MenuItems menuItems)throws MenuItemNotFoundException {
 
@@ -67,7 +86,9 @@ public class MenuItemDAOImpl implements MenuItemDAO{
 
     }
 
-
+    /**
+     * Implementation of findByMenuName method
+     */
     @Override
     public MenuItems findByMenuName(String itemName) throws MenuItemNotFoundException{
       //  Optional optional=Optional.of(repository.findByName(itemName));

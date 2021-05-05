@@ -93,7 +93,7 @@ class UserControllerTest {
     @Test
     public void givenCustomerIdToDeleteThenShouldNotReturnDeletedCustomer() throws Exception {
         when(service.deleteUser(anyInt())).thenThrow(CustomerUnknownException.class);
-        mockMvc.perform(delete("/api/v1/customer/1")
+        mockMvc.perform(delete("/api/v1/customer/remove/1")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(user)))
                 .andExpect(status().isConflict())

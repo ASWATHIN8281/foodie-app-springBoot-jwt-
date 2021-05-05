@@ -29,7 +29,7 @@ public class UserController {
         logger.info("Customer account updated");
         return new ResponseEntity<>(service.updateUser(user,id), HttpStatus.CREATED);
     }
-    @DeleteMapping("/customer/{id}")
+    @DeleteMapping("/customer/remove/{id}")
     public ResponseEntity<User> deleteUserDetails(@PathVariable int id) throws CustomerUnknownException {
         logger.info("Customer details deleted");
         return new ResponseEntity<>(service.deleteUser(id),HttpStatus.OK);

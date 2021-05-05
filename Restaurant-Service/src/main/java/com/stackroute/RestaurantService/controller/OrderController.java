@@ -32,4 +32,8 @@ public class OrderController {
     public ResponseEntity<Order>getOrderById(@PathVariable int id) throws OrderNotFoundException {
         return new ResponseEntity<Order>(service.findByOrderId(id),HttpStatus.FOUND);
     }
+    @DeleteMapping("/order/cancel/{id}")
+    public ResponseEntity<Order>deleteOrderById(@PathVariable int id) throws OrderNotFoundException {
+        return new ResponseEntity<Order>(service.deleteOrder(id),HttpStatus.FOUND);
+    }
 }

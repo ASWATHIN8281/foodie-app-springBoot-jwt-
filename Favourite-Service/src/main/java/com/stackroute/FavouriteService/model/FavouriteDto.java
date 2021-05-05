@@ -7,7 +7,11 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
-
+/**
+ *  @Getter generates getter
+ * @Setter generates setter
+ *   @Id annotation declares  this field as a unique identifier
+ * **/
 @Getter
 @Setter
 public class FavouriteDto {

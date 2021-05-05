@@ -16,15 +16,28 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @Slf4j is used to implement logging
+ * @Service is used to declare the class as service layer
+ * @AllArgsConstructor generates a constructor with 1 parameter for each field
+ */
 @Slf4j
 @Service
 @AllArgsConstructor
 public class FavouriteService implements FavouriteDao {
+    //autowires the repository layer
     @Autowired
     private FavouriteRepository repository;
 
     private static final Logger logger= LoggerFactory.getLogger(FavouriteController.class);
 
+    /**
+     *
+     * @param favourite
+     * The method used to add Favourites of the customer to Favourite
+     * The logger will log the required info
+     * @throws FoodItemAlreadyExistsException if the given fooditem already exists in customers favouritelist
+     */
     @Override
     public Favourite addFavourite(Favourite favourite)throws FoodItemAlreadyExistsException
 
@@ -33,16 +46,21 @@ public class FavouriteService implements FavouriteDao {
             if(repository.existsByUsername(favourite.getUsername())){
             throw new FoodItemAlreadyExistsException();}
         }
-//        Favourite favourite=new Favourite();
-//        favourite.setId(favouriteDto.getId());
-//        favourite.setRestaurantName(favouriteDto.getRestaurantName());
-//        favourite.setFoodItem(favouriteDto.getFoodItem());
-//        favourite.setPrice(favouriteDto.getPrice());
-//        favourite.setCategory(favouriteDto.getCategory());
+
 
         logger.info("The FoodItem is added to Favourite List");
         return repository.save(favourite);
     }
+
+    /**
+     *
+     * @param username
+     * @param foodItem
+     * The method deletes the favourite of customer using the username and fooditem
+     *  returns the deleted favourite
+     *  The logger will log the required info
+     * @throws FoodItemNotFoundException if the given fooditem is not found as favourite in the favouritelist
+     */
 
     @Override
     public Favourite deleteFavourite(String username,String foodItem)throws FoodItemNotFoundException {
@@ -57,6 +75,13 @@ public class FavouriteService implements FavouriteDao {
         return favourite;
     }
 
+    /**
+     *
+     * @param username
+     * This method gets the customer favourite using the username of customer
+     * The logger will log the required info
+     * @throws UsernameNotFoundException if the given username is not found in the database
+     */
     @Override
     public List<Favourite> getFavouriteByUsername(String username)throws UsernameNotFoundException {
         if (!repository.existsByUsername(username)){
@@ -68,6 +93,10 @@ public class FavouriteService implements FavouriteDao {
         return favourite;
     }
 
+    /**
+     * This method gets the favourite of all customer
+     * The logger will log the required info
+     */
     @Override
     public List<Favourite> getAll(){
         logger.info("This is the List of Favourite FoodItem.");

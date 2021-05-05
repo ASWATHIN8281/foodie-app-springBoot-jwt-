@@ -16,11 +16,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * @ControllerAdvice annotation will handle exceptions across
+ * the whole application in one global handling component
+ */
 @ControllerAdvice
 public class GlobalException extends ResponseEntityExceptionHandler {
     @Value(value = "${data.exception.message1}")
     private String message1;
 
+    /**
+     *  @ExceptionHandler is an annotation used to
+     *  handle the specific exceptions and sending the custom responses to the client.
+     *  Exception handling for Fooditem already exist
+     */
     @ExceptionHandler(FoodItemAlreadyExistsException.class)
     public ResponseEntity<String> foodItemAlreadyExists(FoodItemAlreadyExistsException exception) {
         return new ResponseEntity<String>(message1, HttpStatus.CONFLICT);
@@ -30,6 +39,9 @@ public class GlobalException extends ResponseEntityExceptionHandler {
     @Value(value = "${data.exception.message2}")
     private String message2;
 
+    /**
+     *Exception handling for fooditem not found
+     */
     @ExceptionHandler(FoodItemNotFoundException.class)
     public ResponseEntity<String> foodItemNotFound(FoodItemNotFoundException e) {
         return new ResponseEntity<String>(message2, HttpStatus.OK);
@@ -38,6 +50,10 @@ public class GlobalException extends ResponseEntityExceptionHandler {
 
     @Value(value = "${data.exception.message3}")
     private String message3;
+
+    /**
+     *Exceptionhandling Incase of unauthorised accessing
+     */
     @ExceptionHandler(value = UnAuthorizedAccesException.class)
     public ResponseEntity<String> unAuthorizedAccess(UnAuthorizedAccesException e) {
         return new ResponseEntity<String>(message3, HttpStatus.UNAUTHORIZED);
@@ -51,6 +67,9 @@ public class GlobalException extends ResponseEntityExceptionHandler {
 
     }
 
+    /**
+     *Method for Validation
+     */
     public ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
                                                                   HttpHeaders headers,
                                                                   HttpStatus status, WebRequest request) {

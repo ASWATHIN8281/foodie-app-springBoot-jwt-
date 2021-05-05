@@ -29,7 +29,8 @@ public class FavouriteService implements FavouriteDao {
 
     {
         if (repository.existsByFoodItem(favourite.getFoodItem())){
-            throw new FoodItemAlreadyExistsException();
+            if(repository.existsByUsername(favourite.getUsername())){
+            throw new FoodItemAlreadyExistsException();}
         }
 //        Favourite favourite=new Favourite();
 //        favourite.setId(favouriteDto.getId());

@@ -12,7 +12,7 @@ public interface RestaurantDAO {
     List <Restaurant>getAllRestaurants();
     Restaurant deleteRestaurant(int id)throws RestaurantNotFoundException;
     Restaurant updateRestaurant(Restaurant restaurant)throws RestaurantNotFoundException;
-    Restaurant findByLocation(String location)throws RestaurantNotFoundException;
+    List<Restaurant> findByLocation(String location)throws RestaurantNotFoundException;
     Restaurant findByName(String name)throws RestaurantNotFoundException;
     List<Restaurant> searchByMenuItems(String menuItem) throws MenuItemNotFoundException;
 }

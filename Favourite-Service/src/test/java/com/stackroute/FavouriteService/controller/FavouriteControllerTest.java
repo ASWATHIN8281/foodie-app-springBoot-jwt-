@@ -83,8 +83,8 @@ mockMvc.perform(post("/api/v1/favourite")
 }
 @Test
 public void givenFavouriteFoodItemToDeleteThenShouldReturnDeletedFavourite() throws Exception {
-        when(favouriteService.deleteFavourite(favourite.getFoodItem())).thenReturn(favourite);
-        mockMvc.perform(delete("/api/v1/favourite/Burger")
+        when(favouriteService.deleteFavourite(favourite.getUsername(),favourite.getFoodItem())).thenReturn(favourite);
+        mockMvc.perform(delete("/api/v1/favourite?username=karthik@gmail.com&fooditem=Burger")
         .contentType(MediaType.APPLICATION_JSON)
         .content(asJsonString(favourite)))
                 .andExpect(MockMvcResultMatchers.status().isOk()).andDo(MockMvcResultHandlers.print());

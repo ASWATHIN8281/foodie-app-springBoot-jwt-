@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface RestaurantRepository extends MongoRepository<Restaurant,Integer> {
-    Restaurant findByLocation(String location);
+    List<Restaurant> findByLocation(String location);
     Restaurant findByName(String name);
     boolean existsByName(String RestaurantName);
     boolean existsByLocation(String location);

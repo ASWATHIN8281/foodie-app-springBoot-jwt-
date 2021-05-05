@@ -35,15 +35,16 @@ class FavouriteRepositoryTest {
         assertNotNull(favourite1);
         assertEquals(favourite1.getFoodItem(),favourite1.getFoodItem());
     }
-    @Test
-    public void givenGetAllThenShouldReturnListOfAllFavourites(){
-        Favourite favourite=new Favourite(1,"BarbequeIn","Arabian","Mandi",160,"karthik@gmail.com" );
-        repository.save(favourite);
-        Favourite favourite1=new Favourite(3,"Navaratna","Thali's","Veg Thali",150,"Alby");
-        repository.save(favourite1);
-        List<Favourite>favouriteList=repository.findAll();
-        assertEquals("BarbequeIn",favouriteList.get(0).getRestaurantName());
-    }
+//    /*
+//   @Test
+//    public void givenGetAllThenShouldReturnListOfAllFavourites(){
+//        Favourite favourite=new Favourite(1,"BarbequeIn","Arabian","Mandi",160,"karthik@gmail.com" );
+//        repository.save(favourite);
+//        Favourite favourite1=new Favourite(3,"Navaratna","Thali's","Veg Thali",150,"Alby");
+//        repository.save(favourite1);
+//        List<Favourite>favouriteList=repository.findAll();
+//        assertEquals("BarbequeIn",favouriteList.get(0).getRestaurantName());
+//    }  */
 //    @Test
 //    public void givenFoodItemThenShouldReturnRespectiveFavourite(){
 //        Favourite favourite=new Favourite(15,"Panipuri Corner","StreetFood","Panipuri",45,"Jenis");

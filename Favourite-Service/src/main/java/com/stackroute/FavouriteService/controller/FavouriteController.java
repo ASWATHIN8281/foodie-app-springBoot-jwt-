@@ -59,13 +59,14 @@ public class FavouriteController {
         return new ResponseEntity<>(( favouriteDao.getFavouriteByUsername(username)),HttpStatus.FOUND);
     }
 
-    @DeleteMapping("/favourite/{foodItem}")
-    public ResponseEntity<Favourite> deleteFavourite( @PathVariable String foodItem)
+    @DeleteMapping("/favourite")
+    public ResponseEntity<Favourite> deleteFavourite( @RequestParam(value ="username") String username,
+                                                      @RequestParam (value = "fooditem") String foodItem)
             throws FoodItemNotFoundException {
 
 
             logger.info("The favourite foodItem is deleted successfully.");
-            return new ResponseEntity<Favourite>(favouriteDao.deleteFavourite(foodItem), HttpStatus.OK);
+            return new ResponseEntity<Favourite>(favouriteDao.deleteFavourite(username,foodItem), HttpStatus.OK);
 
 
     }

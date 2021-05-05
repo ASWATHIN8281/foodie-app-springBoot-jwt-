@@ -13,6 +13,10 @@ import java.util.function.Predicate;
 import static com.google.common.base.Predicates.or;
 import static springfox.documentation.builders.PathSelectors.regex;
 
+/**
+ * This is swagger configuration class
+ * @EnableSwagger2 is used to enable swagger
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {

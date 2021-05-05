@@ -17,7 +17,12 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-
+/**
+ * @Slf4j is used to implement logging
+ * @RestController is used to declare the class as restcontroller layer
+ * @AllArgsConstructor generates a constructor with 1 parameter for each field
+ * @RequestMapping  maps HTTP requests to handler methods of  restcontroller
+ */
 @Slf4j
 @RestController
 @AllArgsConstructor
@@ -25,10 +30,19 @@ import java.util.List;
 public class FavouriteController {
 
     private static Logger logger = (Logger) LoggerFactory.getLogger(FavouriteController.class);
-
+//autowires the favouriteDao
     @Autowired
     private FavouriteDao favouriteDao;
 
+    /**
+     *
+     * @param favourite
+     * The method used to add Favourites of the customer to Favourite
+     * @Valid is used for validation
+     *  @PostMapping is used to handle POST type of request method
+     *  The logger will log the required info
+     * @throws FoodItemAlreadyExistsException if the given fooditem already exists in customers favouritelist
+     */
     @PostMapping("/favourite")
     public ResponseEntity<Favourite> addFavourite( @Valid @RequestBody Favourite favourite) throws FoodItemAlreadyExistsException {
 
@@ -44,6 +58,11 @@ public class FavouriteController {
         }
     }
 
+    /**
+     * this method returns the list of favourites of all customers
+     * The logger will log the required info
+
+     */
     @GetMapping("/favourites")
     public ResponseEntity<List<Favourite>> getAll() {
 
@@ -52,13 +71,28 @@ public class FavouriteController {
 
         return new ResponseEntity<>( favouriteDao.getAll(), HttpStatus.OK);
     }
+
+    /**
+     *
+     * @param username
+     * This method gets the favourites of customer based on username
+     * The logger will log the required info
+     * @throws UsernameNotFoundException if the username is not found in the database
+     */
     @GetMapping("/favourite/{username}")
     public ResponseEntity<List<Favourite>>getFavouriteByUsername(@PathVariable String username)
             throws UsernameNotFoundException {
         logger.info("This is the list of favourites of",username);
         return new ResponseEntity<>(( favouriteDao.getFavouriteByUsername(username)),HttpStatus.FOUND);
     }
-
+    /**
+     * @param username
+     * @param foodItem
+     * The method deletes the favourite of customer using the username and fooditem
+     *  returns the deleted favourite
+     *  The logger will log the required info
+     * @throws FoodItemNotFoundException if the given fooditem is not found as favourite in the favouritelist
+     */
     @DeleteMapping("/favourite")
     public ResponseEntity<Favourite> deleteFavourite( @RequestParam(value ="username") String username,
                                                       @RequestParam (value = "fooditem") String foodItem)

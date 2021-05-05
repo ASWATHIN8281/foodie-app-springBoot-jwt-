@@ -8,10 +8,16 @@ import com.stackroute.FavouriteService.model.Favourite;
 import java.util.List;
 
 public interface FavouriteDao {
+   /**
+    *
+    * @param favourite
+    * @return
+    * @throws FoodItemAlreadyExistsException
+    * These are the various methods implemented in the application.
+    */
    public Favourite addFavourite(Favourite favourite) throws FoodItemAlreadyExistsException;
    public Favourite deleteFavourite(String username,String foodItem)throws FoodItemNotFoundException;
    List<Favourite>  getFavouriteByUsername(String username) throws UsernameNotFoundException;
-
    List<Favourite> getAll();
 
 

@@ -15,17 +15,32 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+/**
+ *@Document annotation declares the class as Mongo Document
+ * //@AllArgsConstructor generates a constructor with 1 parameter for each field
+ * //@NoArgsConstructor annotation generates a empty constructor
+ * //@Getter annotation  generates getter
+ * //@Setter annotation generates setter
+ *
+ *  **/
 
 @Document(collection = "Favourite-List")
+
 @AllArgsConstructor
+
 @NoArgsConstructor
+
 @Getter
+
 @Setter
 public class Favourite {
+    /**
+     *@Id annotation declares  this field as a unique identifier
+     * @NotNull annotation is validation that declares the field should not be null
+     * @Size is used to validate this field's  value between the attributes min and max
+     * The various properties to be used is defined below
+     **/
     @Id
-    @Unique
-
-
     private int id;
 
     @NotNull
@@ -46,10 +61,15 @@ public class Favourite {
     private double price;
 
     @NotNull
+
+ /**
+  *  @Email annotation is used to validate the field to be email
+  *
+  *  **/
     @Email
     @Size(min = 3,message = "The Username should contain minimum 3 characters")
     private String username;
-  //add user rate
+
 
 
 }

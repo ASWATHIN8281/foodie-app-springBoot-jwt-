@@ -16,10 +16,17 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
+/**
+ * @RestController is used to declare the class as restcontroller
+ * @Component annotation is used to denote a class as Component
+ */
 @Component
 @RestController
 public class JwtRequestFilter extends GenericFilterBean {
-
+    /**
+     * The method checks the authorisation of user login based on the token and Bearer
+     */
     @SneakyThrows
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
@@ -34,23 +41,23 @@ public class JwtRequestFilter extends GenericFilterBean {
             filterChain.doFilter(request, response);
         }
         else {
-            /*
+            /**
              * Check if authHeader is null or does not start with "Bearer " then throw Exception
              */
             if (authHeader == null || !authHeader.startsWith("Bearer ")) {
                 //throw new ServletException("An exception occured -Missing or Invalid Authorization header");
                  throw new UnAuthorizedAccesException();
             }
-            /*
+            /**
              * Extract token from authHeader
              */
             final String token = authHeader.substring(7);
             try {
-                /*
+                /**
                  * Obtain Claims by parsing the token with the signing key value "secret key"
                  */
                 Claims claims = Jwts.parser().setSigningKey("foodapp").parseClaimsJws(token).getBody();
-                /*
+                /**
                  * Set Claims object obtained in previous step with key "claims" as request attribute
                  */
                 request.setAttribute("claims", claims);

@@ -3,6 +3,11 @@ package com.stackroute.UserService.model;
 import lombok.AllArgsConstructor;
 
 import java.io.Serializable;
+
+/*
+* jwt token response
+* */
+
 @AllArgsConstructor
 public class JwtResponse implements Serializable {
     private static final long serialVersionUID = -8091879091924046844L;

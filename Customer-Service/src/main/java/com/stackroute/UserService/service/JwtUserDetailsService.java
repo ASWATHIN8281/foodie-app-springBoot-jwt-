@@ -26,6 +26,9 @@ public class JwtUserDetailsService implements UserDetailsService {
     @Autowired
     PasswordEncoder passwordEncoder;
     private static final Logger logger = (Logger) LoggerFactory.getLogger(JwtUserDetailsService.class);
+
+    // load user by user name
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
             User user = repository.findByUsername(username);
@@ -35,6 +38,9 @@ public class JwtUserDetailsService implements UserDetailsService {
             }
             return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),new ArrayList<>());
     }
+
+    //register customer details to db throw exception if customer already exists
+
     public User saveUser(User user) throws CustomerAlreadyExistsException {
             if(repository.existsByusername(user.getUsername())){
                 logger.error("Customer account already exists ");
@@ -50,6 +56,9 @@ public class JwtUserDetailsService implements UserDetailsService {
             logger.info("Customer saved");
             return repository.save(user);
     }
+
+    //remove customer details by passing ustomer Id
+
     public User deleteUser(int id)throws CustomerUnknownException{
         User user=null;
         Optional optional=repository.findById(id);
@@ -62,6 +71,9 @@ public class JwtUserDetailsService implements UserDetailsService {
         logger.info("Customer information deleted");
         return user;
     }
+
+    //get customer details by using id
+
     public User getUserById(int id) throws CustomerUnknownException {
         User user=null;
         Optional optional=repository.findById(id);
@@ -73,6 +85,9 @@ public class JwtUserDetailsService implements UserDetailsService {
         user=repository.findById(id).get();
         return user;
     }
+
+    //update customer details by using customer id
+
     public User updateUser(User user,int id) throws CustomerUnknownException{
         User userUp=null;
         Optional optional=repository.findById(id);

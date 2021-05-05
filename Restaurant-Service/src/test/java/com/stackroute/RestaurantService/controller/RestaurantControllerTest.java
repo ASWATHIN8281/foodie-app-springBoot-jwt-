@@ -77,7 +77,7 @@ public class RestaurantControllerTest {
     }
     @Test
     void givenRestaurantLocationThenShouldReturnRespectiveRestaurantLocation() throws Exception {
-        when(restaurantDAO.findByLocation(restaurant.getLocation())).thenReturn(restaurant);
+        when(restaurantDAO.findByLocation(restaurant.getLocation())).thenReturn(restaurantList);
         mockMvc.perform(get("/api/v1/restaurant/loc/Mysore"))
                 .andExpect(MockMvcResultMatchers.status()
                         .isFound())

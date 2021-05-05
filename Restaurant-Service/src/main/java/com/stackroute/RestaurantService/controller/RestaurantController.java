@@ -48,9 +48,9 @@ public class RestaurantController {
     }
 
     @GetMapping("restaurant/loc/{location}")
-    public ResponseEntity<Restaurant> getRestaurantByLocation(@PathVariable String location)throws  RestaurantNotFoundException{
+    public ResponseEntity<List<Restaurant> >getRestaurantByLocation(@PathVariable String location)throws  RestaurantNotFoundException{
        logger.info("Fetched restaurant based on location");
-        return new ResponseEntity<Restaurant>(service.findByLocation(location),HttpStatus.FOUND);
+        return new ResponseEntity<List<Restaurant>>(service.findByLocation(location),HttpStatus.FOUND);
     }
     @GetMapping("restaurant/name/{name}")
     public ResponseEntity<Restaurant> getRestaurantByName(@PathVariable String name)throws  RestaurantNotFoundException{

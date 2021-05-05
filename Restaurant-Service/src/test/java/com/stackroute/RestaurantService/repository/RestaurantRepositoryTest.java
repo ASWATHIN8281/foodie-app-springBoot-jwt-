@@ -82,10 +82,10 @@ class RestaurantRepositoryTest {
     public  void  GivenLocationShouldReturnRestaurant(){
         restaurantRepository.save(restaurant);
         restaurantRepository.save(restaurant1);
-        Restaurant list=restaurantRepository.findByLocation(restaurant1.getLocation());
-        assertEquals(restaurant1.getRestaurantId(),list.getRestaurantId());
-        assertEquals(restaurant1.getName(),list.getName());
-        assertEquals(restaurant1.getLocation(),list.getLocation());
+       List<Restaurant>  list=  restaurantRepository.findByLocation(restaurant1.getLocation());
+        assertEquals(restaurant1.getRestaurantId(),list.get(0).getRestaurantId());
+        assertEquals(restaurant1.getName(),list.get(0).getName());
+        assertEquals(restaurant1.getLocation(),list.get(0).getLocation());
     }
     @Test
     public  void  givenIdShouldDeleteRestaurant(){

@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -44,15 +45,16 @@ public class FavouriteService implements FavouriteDao {
     }
 
     @Override
-    public Favourite deleteFavourite(String foodItem)throws FoodItemNotFoundException {
+    public Favourite deleteFavourite(String username,String foodItem)throws FoodItemNotFoundException {
         Favourite favourite=null;
-        if (!repository.existsByFoodItem(foodItem)){
+        Optional optional=Optional.of(repository.findByUsernameAndFoodItem(username, foodItem));
+        if (!optional.isPresent()){
             throw new FoodItemNotFoundException();
         }
-        favourite=repository.findByFoodItem(foodItem);
-            repository.deleteByfoodItem(foodItem);
-logger.info("The foodItem is deleted.");
-       return favourite;
+        favourite=repository.findByUsernameAndFoodItem(username, foodItem);
+        repository.delete(favourite);
+        logger.info("The foodItem is deleted.");
+        return favourite;
     }
 
     @Override

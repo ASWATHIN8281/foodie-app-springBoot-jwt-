@@ -72,13 +72,13 @@ public class RestaurantDAOImpl implements RestaurantDAO {
 
 
     @Override
-    public Restaurant findByLocation(String location) throws RestaurantNotFoundException{
+    public List<Restaurant> findByLocation(String location) throws RestaurantNotFoundException{
        //Optional optional=Optional.of(repository.findByLocation(location));
        if(!repository.existsByLocation(location)){
            logger.error("Restaurant not found");
            throw new RestaurantNotFoundException();
        }
-       Restaurant restaurant=repository.findByLocation(location);
+       List<Restaurant> restaurant=repository.findByLocation(location);
        logger.info("Restaurant fetched based on location");
        return restaurant;
     }

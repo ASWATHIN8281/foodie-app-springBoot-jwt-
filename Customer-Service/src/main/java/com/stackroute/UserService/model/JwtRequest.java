@@ -6,6 +6,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+
+/*
+ * jwt token request
+ * */
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

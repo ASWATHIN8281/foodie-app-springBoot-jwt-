@@ -29,6 +29,8 @@ public class JwtAuthenticationController {
     @Autowired
     private JwtUserDetailsService userDetailsService;
 
+    /*   customer Login   */
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
@@ -41,6 +43,9 @@ public class JwtAuthenticationController {
 
         return ResponseEntity.ok(new JwtResponse(token));
     }
+
+    /* register customer */
+
     @PostMapping("/register")
     public ResponseEntity<?> saveUser(@Valid @RequestBody User user) throws Exception{
         return ResponseEntity.ok(userDetailsService.saveUser(user));

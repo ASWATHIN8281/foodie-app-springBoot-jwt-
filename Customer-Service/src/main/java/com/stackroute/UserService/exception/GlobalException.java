@@ -22,14 +22,30 @@ public class GlobalException {
     @Value(value = "${data.exception.message2}")
     private String message2;
 
+    /*
+    * exception handling for
+    * customer already exists
+    * */
+
     @ExceptionHandler(value = CustomerAlreadyExistsException.class)
     public ResponseEntity<String> customerAlreadyExists(CustomerAlreadyExistsException exception){
         return new ResponseEntity<String>(message1, HttpStatus.CONFLICT);
     }
+
+    /*
+     * exception handling for
+     * customer unknown scenario
+     * */
+
     @ExceptionHandler(value = CustomerUnknownException.class)
     public ResponseEntity<String> customerUnknownExists(CustomerUnknownException exception){
         return new ResponseEntity<String>(message2, HttpStatus.CONFLICT);
     }
+
+    /*
+     * handling
+     * method argument not valid exception
+     * */
 
     public ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
                                                                HttpHeaders headers,

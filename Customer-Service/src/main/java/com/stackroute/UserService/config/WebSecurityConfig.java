@@ -30,6 +30,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+
+        /*
+        configure AuthenticationManager so that it knows from where to load
+        customer for matching credentials
+        Use BCryptPasswordEncoder
+        */
+
         auth.userDetailsService(jwtUserDetailsService).passwordEncoder(passwordEncoder());
     }
 
@@ -44,16 +51,30 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
+    /*
+    * Allow the url
+    * /register
+    * /login
+    * /swagger-ui.html
+    *  to be allowed without applying spring security
+    * */
+
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
 
         httpSecurity.csrf().disable()
 
-                .authorizeRequests().antMatchers("/login","/register").permitAll().
+                .authorizeRequests().antMatchers("/login","/register","/swagger-ui.html").permitAll().
                 anyRequest().authenticated().and().
                 exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+        /*
+        Add a filter to validate
+        the tokens with every request
+        */
+
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
 }

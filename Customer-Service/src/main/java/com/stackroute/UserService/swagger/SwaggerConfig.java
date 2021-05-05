@@ -29,7 +29,7 @@ public class SwaggerConfig {
                 .contact("168029@ust.com")
                 .license("stackroute")
                 .licenseUrl("www.stackroute.com")
-                .termsOfServiceUrl("abc@gmail.com")
+                .termsOfServiceUrl("foodApp@gmail.com")
                 .version("1.0").build();
     }
 }

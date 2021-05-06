@@ -85,7 +85,7 @@ public class RestaurantController {
      * retrieve restaurant based on menu
      */
     @GetMapping("restaurant/menuitem/{item}")
-    public ResponseEntity<List<Restaurant>> searchRestaurantByItem(@PathVariable String item) throws RestaurantNotFoundException, MenuItemNotFoundException {
+    public ResponseEntity<List<Restaurant>> searchRestaurantByItem(@PathVariable String item) throws MenuItemNotFoundException {
     logger.info("Fetched restaurant based on name");
         return new ResponseEntity<>(service.searchByMenuItems(item),HttpStatus.FOUND);
 }

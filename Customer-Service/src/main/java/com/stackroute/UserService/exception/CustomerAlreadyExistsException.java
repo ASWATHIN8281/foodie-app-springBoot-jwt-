@@ -2,7 +2,7 @@ package com.stackroute.UserService.exception;
 
 import lombok.NoArgsConstructor;
 
-/*
+/**
  * exception handling for
  * customer already exists
  * */

@@ -18,11 +18,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @RestController is used to declare the class as restcontroller
- * @Component annotation is used to denote a class as Component
+ *  This class implements the custom filter by extending org.springframework.web.filter.GenericFilterBean.
+ * Override the doFilter method with ServletRequest, ServletResponse and FilterChain.
+ * This is used to authorize the API access for the application.
  */
-@Component
-@RestController
+
 public class JwtRequestFilter extends GenericFilterBean {
     /**
      * The method checks the authorisation of user login based on the token and Bearer

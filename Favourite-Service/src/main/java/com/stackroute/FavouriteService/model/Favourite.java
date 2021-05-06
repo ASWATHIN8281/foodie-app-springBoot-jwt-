@@ -59,13 +59,11 @@ public class Favourite {
 
     @NotNull
     private double price;
-
-    @NotNull
-
- /**
+    /**
   *  @Email annotation is used to validate the field to be email
   *
   *  **/
+    @NotNull
     @Email
     @Size(min = 3,message = "The Username should contain minimum 3 characters")
     private String username;

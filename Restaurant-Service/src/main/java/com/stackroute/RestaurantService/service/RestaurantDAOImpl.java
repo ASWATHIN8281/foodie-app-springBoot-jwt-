@@ -126,7 +126,8 @@ public class RestaurantDAOImpl implements RestaurantDAO {
     @Override
     public List<Restaurant> searchByMenuItems(String menuItem) throws MenuItemNotFoundException {
         Optional optional=Optional.of(repository.findByMenuItem(menuItem));
-        if(!optional.isPresent()){
+        List<Restaurant> restaurantList= repository.findByMenuItem(menuItem);
+        if(!optional.isPresent() || restaurantList.isEmpty()){
             logger.error("Restaurant not found");
             throw new MenuItemNotFoundException();
         }

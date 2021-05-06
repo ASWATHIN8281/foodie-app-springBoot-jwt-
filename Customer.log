@@ -1,0 +1,93 @@
+2021-05-06 10:13:28.081  INFO 6464 --- [restartedMain] c.s.UserService.UserServiceApplication   : Starting UserServiceApplication on ip-172-31-46-249 with PID 6464 (/home/ubuntu/Desktop/Foodie-App/Customer-Service/target/classes started by ubuntu in /home/ubuntu/Desktop/Foodie-App)
+2021-05-06 10:13:28.088  INFO 6464 --- [restartedMain] c.s.UserService.UserServiceApplication   : No active profile set, falling back to default profiles: default
+2021-05-06 10:13:28.233  INFO 6464 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-06 10:13:28.233  INFO 6464 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-06 10:13:31.885  INFO 6464 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-06 10:13:32.089  INFO 6464 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 187ms. Found 1 JPA repository interfaces.
+2021-05-06 10:13:32.830  INFO 6464 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4eb7b2d2' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-06 10:13:32.842  INFO 6464 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-06 10:13:33.810  INFO 6464 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-06 10:13:33.831  INFO 6464 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 10:13:33.832  INFO 6464 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-06 10:13:34.116  INFO 6464 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-06 10:13:34.116  INFO 6464 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5867 ms
+2021-05-06 10:13:35.079  INFO 6464 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-06 10:13:35.560  INFO 6464 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-05-06 10:13:36.908  INFO 6464 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-06 10:13:37.374  INFO 6464 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-06 10:13:38.791  INFO 6464 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-06 10:13:38.878  INFO 6464 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-06 10:13:40.622  INFO 6464 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-06 10:13:40.634  INFO 6464 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 10:13:41.403  WARN 6464 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-06 10:13:41.700  INFO 6464 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 10:13:42.897  INFO 6464 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66155c0d, org.springframework.security.web.context.SecurityContextPersistenceFilter@530cf94d, org.springframework.security.web.header.HeaderWriterFilter@66e200a2, org.springframework.security.web.authentication.logout.LogoutFilter@2132939e, com.stackroute.UserService.config.JwtRequestFilter@27ae9b8d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e4f7299, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7d19cc9e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@316caa40, org.springframework.security.web.session.SessionManagementFilter@2d5fbf82, org.springframework.security.web.access.ExceptionTranslationFilter@24cd1671, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6dfb2d28]
+2021-05-06 10:13:43.175  INFO 6464 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-06 10:13:43.632  INFO 6464 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-05-06 10:13:43.644  INFO 6464 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-05-06 10:13:43.678  INFO 6464 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-05-06 10:13:43.687  INFO 6464 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-05-06 10:13:44.066  INFO 6464 --- [restartedMain] c.s.UserService.UserServiceApplication   : Started UserServiceApplication in 17.911 seconds (JVM running for 20.616)
+2021-05-06 10:26:07.301  INFO 6464 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-06 10:26:07.301  INFO 6464 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-06 10:26:07.316  INFO 6464 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2021-05-06 10:26:07.349  WARN 6464 --- [http-nio-8081-exec-1] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 10:26:07.611  WARN 6464 --- [http-nio-8081-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<?> com.stackroute.UserService.controller.JwtAuthenticationController.saveUser(com.stackroute.UserService.model.User) throws java.lang.Exception with 2 errors: [Field error in object 'user' on field 'firstName': rejected value []; codes [Size.user.firstName,Size.firstName,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.firstName,firstName]; arguments []; default message [firstName],30,3]; default message [The firstname should not blank and must contain minimum 3 character and max 30 character]] [Field error in object 'user' on field 'password': rejected value []; codes [Size.user.password,Size.password,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.password,password]; arguments []; default message [password],2147483647,5]; default message [password should have minimum size of 5 ]] ]
+2021-05-06 10:27:05.889  WARN 6464 --- [http-nio-8081-exec-2] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 10:27:06.745  INFO 6464 --- [http-nio-8081-exec-2] c.s.U.service.JwtUserDetailsService      : Customer saved
+2021-05-06 10:27:28.384  WARN 6464 --- [http-nio-8081-exec-3] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 10:27:28.444  WARN 6464 --- [http-nio-8081-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<?> com.stackroute.UserService.controller.JwtAuthenticationController.saveUser(com.stackroute.UserService.model.User) throws java.lang.Exception with 3 errors: [Field error in object 'user' on field 'firstName': rejected value [null]; codes [NotNull.user.firstName,NotNull.firstName,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.firstName,firstName]; arguments []; default message [firstName]]; default message [must not be null]] [Field error in object 'user' on field 'contactNum': rejected value [null]; codes [NotNull.user.contactNum,NotNull.contactNum,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.contactNum,contactNum]; arguments []; default message [contactNum]]; default message [The contactNum cannot be null]] [Field error in object 'user' on field 'address': rejected value [null]; codes [NotNull.user.address,NotNull.address,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.address,address]; arguments []; default message [address]]; default message [Address is mandatory]] ]
+2021-05-06 10:29:42.402  WARN 6464 --- [http-nio-8081-exec-4] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 10:29:56.551  WARN 6464 --- [http-nio-8081-exec-5] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 10:31:06.560  INFO 6464 --- [http-nio-8081-exec-7] c.s.U.controller.UserController          : Customer account fetched by id
+2021-05-06 10:31:06.590  INFO 6464 --- [http-nio-8081-exec-7] c.s.U.service.JwtUserDetailsService      : Customer details fetched
+2021-05-06 10:31:13.868  INFO 6464 --- [http-nio-8081-exec-8] c.s.U.controller.UserController          : Customer account fetched by id
+2021-05-06 10:31:13.886 ERROR 6464 --- [http-nio-8081-exec-8] c.s.U.service.JwtUserDetailsService      : customer unknown
+2021-05-06 10:31:13.901  WARN 6464 --- [http-nio-8081-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.stackroute.UserService.exception.CustomerUnknownException]
+2021-05-06 10:31:19.703  INFO 6464 --- [http-nio-8081-exec-9] c.s.U.controller.UserController          : Customer account fetched by id
+2021-05-06 10:31:19.717 ERROR 6464 --- [http-nio-8081-exec-9] c.s.U.service.JwtUserDetailsService      : customer unknown
+2021-05-06 10:31:19.724  WARN 6464 --- [http-nio-8081-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.stackroute.UserService.exception.CustomerUnknownException]
+2021-05-06 10:31:24.621  INFO 6464 --- [http-nio-8081-exec-10] c.s.U.controller.UserController          : Customer account fetched by id
+2021-05-06 10:31:24.646  INFO 6464 --- [http-nio-8081-exec-10] c.s.U.service.JwtUserDetailsService      : Customer details fetched
+2021-05-06 10:34:00.701  WARN 6464 --- [http-nio-8081-exec-2] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 10:34:31.217  INFO 6464 --- [http-nio-8081-exec-3] c.s.U.controller.UserController          : Customer account updated
+2021-05-06 10:34:31.224  INFO 6464 --- [http-nio-8081-exec-3] c.s.U.service.JwtUserDetailsService      : customer details updated
+2021-05-06 10:35:52.671  INFO 6464 --- [http-nio-8081-exec-5] c.s.U.controller.UserController          : Customer details deleted
+2021-05-06 10:35:52.705  INFO 6464 --- [http-nio-8081-exec-5] c.s.U.service.JwtUserDetailsService      : Customer information deleted
+2021-05-06 10:36:01.522  INFO 6464 --- [http-nio-8081-exec-6] c.s.U.controller.UserController          : Customer details deleted
+2021-05-06 10:36:01.543 ERROR 6464 --- [http-nio-8081-exec-6] c.s.U.service.JwtUserDetailsService      : Customer unknown
+2021-05-06 10:36:01.552  WARN 6464 --- [http-nio-8081-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.stackroute.UserService.exception.CustomerUnknownException]
+2021-05-06 10:44:44.954  WARN 6464 --- [http-nio-8081-exec-8] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 10:59:13.400  WARN 6464 --- [http-nio-8081-exec-10] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 11:10:29.233  WARN 6464 --- [http-nio-8081-exec-2] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.278  WARN 6464 --- [http-nio-8081-exec-4] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.337  WARN 6464 --- [http-nio-8081-exec-5] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.346  WARN 6464 --- [http-nio-8081-exec-6] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.366  WARN 6464 --- [http-nio-8081-exec-7] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.367  WARN 6464 --- [http-nio-8081-exec-8] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.379  WARN 6464 --- [http-nio-8081-exec-9] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.389  WARN 6464 --- [http-nio-8081-exec-10] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.412  WARN 6464 --- [http-nio-8081-exec-1] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.418  WARN 6464 --- [http-nio-8081-exec-2] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.424  WARN 6464 --- [http-nio-8081-exec-5] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.424  WARN 6464 --- [http-nio-8081-exec-4] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.427  WARN 6464 --- [http-nio-8081-exec-1] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.427  WARN 6464 --- [http-nio-8081-exec-3] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.460  WARN 6464 --- [http-nio-8081-exec-8] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.470  WARN 6464 --- [http-nio-8081-exec-7] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.471  WARN 6464 --- [http-nio-8081-exec-10] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.474  WARN 6464 --- [http-nio-8081-exec-6] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.470  WARN 6464 --- [http-nio-8081-exec-9] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.516  WARN 6464 --- [http-nio-8081-exec-4] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.519  WARN 6464 --- [http-nio-8081-exec-2] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.529  WARN 6464 --- [http-nio-8081-exec-3] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.537  WARN 6464 --- [http-nio-8081-exec-3] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.546  WARN 6464 --- [http-nio-8081-exec-1] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.556  WARN 6464 --- [http-nio-8081-exec-5] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.567  WARN 6464 --- [http-nio-8081-exec-7] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.606  WARN 6464 --- [http-nio-8081-exec-10] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:02:47.625  WARN 6464 --- [http-nio-8081-exec-9] c.s.UserService.config.JwtRequestFilter  : JWT Token does not begin with Bearer String
+2021-05-06 13:33:51.541  INFO 6464 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-06 13:33:51.557  INFO 6464 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 13:33:51.566  INFO 6464 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-05-06 13:33:51.609  INFO 6464 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

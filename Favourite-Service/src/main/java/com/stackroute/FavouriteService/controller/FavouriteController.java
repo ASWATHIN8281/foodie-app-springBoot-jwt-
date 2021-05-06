@@ -1,5 +1,6 @@
 package com.stackroute.FavouriteService.controller;
 
+import com.stackroute.FavouriteService.Exception.FavouriteListNotFoundException;
 import com.stackroute.FavouriteService.Exception.FoodItemAlreadyExistsException;
 import com.stackroute.FavouriteService.Exception.FoodItemNotFoundException;
 import com.stackroute.FavouriteService.Exception.UsernameNotFoundException;
@@ -96,7 +97,7 @@ public class FavouriteController {
     @DeleteMapping("/favourite")
     public ResponseEntity<Favourite> deleteFavourite( @RequestParam(value ="username") String username,
                                                       @RequestParam (value = "fooditem") String foodItem)
-            throws FoodItemNotFoundException {
+            throws FavouriteListNotFoundException {
 
 
             logger.info("The favourite foodItem is deleted successfully.");

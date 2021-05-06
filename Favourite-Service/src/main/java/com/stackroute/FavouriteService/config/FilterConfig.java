@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @Configuration annotation indicates that the class has @Bean definition methods
- * This is a filterconfig class
+ * This is a filter config class
  */
 @Configuration
 public class FilterConfig {

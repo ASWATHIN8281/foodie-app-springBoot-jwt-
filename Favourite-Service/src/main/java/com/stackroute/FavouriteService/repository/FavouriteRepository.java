@@ -14,12 +14,11 @@ import java.util.List;
  */
 @Repository
 public interface FavouriteRepository extends MongoRepository<Favourite,Integer>{
-    @Query(value = "{'foodItem':$0}", delete = true)
-
     /**
      * Below are the queries passed in the application
      */
-    Favourite deleteByfoodItem(String foodItem);
+//    @Query(value = "{'foodItem':$0}", delete = true)
+//    Favourite deleteByfoodItem(String foodItem);
     Favourite findByFoodItem(String foodItem);
     Boolean existsByFoodItem(String foodItem);
     Boolean existsByUsername(String username);

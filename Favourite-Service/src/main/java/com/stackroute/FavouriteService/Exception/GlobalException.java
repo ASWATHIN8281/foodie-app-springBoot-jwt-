@@ -52,11 +52,21 @@ public class GlobalException extends ResponseEntityExceptionHandler {
     private String message3;
 
     /**
-     *Exceptionhandling Incase of unauthorised accessing
+     *Exception handling In case of unauthorised accessing
      */
     @ExceptionHandler(value = UnAuthorizedAccesException.class)
     public ResponseEntity<String> unAuthorizedAccess(UnAuthorizedAccesException e) {
         return new ResponseEntity<String>(message3, HttpStatus.UNAUTHORIZED);
+
+    }
+    /**
+     *Exception handling In case of Favourite list not found accessing
+     */
+    @Value(value = "${data.exception.message5}")
+    private  String message5;
+    @ExceptionHandler(value = FavouriteListNotFoundException.class)
+    public ResponseEntity<String> favouriteListNotFoundExceptio(FavouriteListNotFoundException e) {
+        return new ResponseEntity<String>(message5, HttpStatus.UNAUTHORIZED);
 
     }
     @Value(value = "${data.exception.message4}")

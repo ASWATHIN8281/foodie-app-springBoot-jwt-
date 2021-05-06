@@ -16,6 +16,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+   /**
+   * Make a single execution
+   * for each request
+   * */
 @Component
 public class JwtRequestFilter  extends OncePerRequestFilter {
     @Autowired

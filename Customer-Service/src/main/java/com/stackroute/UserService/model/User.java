@@ -26,12 +26,13 @@ public class User {
     private String firstName;
     private String lastName;
     @Email
-    @NotNull(message = "The username cannot be null")
+    @NotBlank(message = "The username cannot be null")
     private String username;
     @NotNull(message = "The contactNum cannot be null")
     @Size(min=10,max=10, message = "should have 10 digits")
     private String contactNum;
     @NotNull(message = "Address is mandatory")
+    @NotBlank(message = "Address should not be blank")
     private String address;
     @NotNull(message = "required")
     @Size(min = 5,message = "password should have minimum size of 5 ")

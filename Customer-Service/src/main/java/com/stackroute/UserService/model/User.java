@@ -18,6 +18,7 @@ import javax.validation.constraints.Size;
 @Setter
 @Table(name = "user_table")
 public class User {
+    //properties
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int uId;
